@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-
+import React from "react";
 const AboutUs = () => {
   
   // Detect if screen width is mobile
