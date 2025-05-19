@@ -94,7 +94,7 @@ const Header = () => {
             <a href="#projects" className="text-xl" onClick={toggleMenu}>
               Projects
             </a>
-            <a href="#contact-us" className="text-xl" onClick={toggleMenu}>
+            <a href="#contact" className="text-xl" onClick={toggleMenu}>
               Contact
             </a>
           </div>
