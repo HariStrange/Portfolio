@@ -8,26 +8,26 @@ import { FaSchool, FaUniversity, FaBriefcase } from "react-icons/fa";
 import { LiaSchoolSolid } from "react-icons/lia";
 const experiences = [
   {
-    type: "education",
-    date: "Year:2017 - 2018",
-    title: "SSLC",
-    subtitle: " Government High School",
-    Location: "Sesanchavadi, Salem - 636111",
-    description: "Percentage: 78%",
-    icon: <LiaSchoolSolid />,
+    type: "work",
+    date: "Year: Oct 2024 -  Present",
+    title: "Full Stack Developer",
+    subtitle: "Sholas Technologies Private Limited",
+    Location: "Teacher's Colony Erode - 638011",
+    description: "Currently working as a Full Stack Developer",
+    icon: <FaBriefcase />,
     image:
-      "https://res.cloudinary.com/dx5lg8mei/image/upload/v1747633689/Logo_Tamil_Nadu_iheef7.jpg",
+      "https://res.cloudinary.com/dx5lg8mei/image/upload/v1745030911/WhatsApp_Image_2025-04-17_at_17.21.20_3ba0f6d1_p5owal.png",
   },
   {
     type: "education",
-    date: "Year: 2018 - 2020",
-    title: "HSC",
-    subtitle: "Government Higher Secondary School",
-    Location: "Mettupatti, Salem - 636455",
-    description: "Percentage: 58%",
-    icon: <FaSchool />,
+    date: "Year: Jan 2023 – Present",
+    title: "Full Stack Development – CCBP 4.0 Intensive Program",
+    subtitle: "NxtWave Disruptive Technologies Pvt. Ltd.",
+    Location: "Online | HQ: Manikonda, Hyderabad - 500032",
+    description: "",
+    icon: <FaUniversity />,
     image:
-      "https://res.cloudinary.com/dx5lg8mei/image/upload/v1747633689/Logo_Tamil_Nadu_iheef7.jpg",
+      "https://res.cloudinary.com/dx5lg8mei/image/upload/v1747633529/nxt_wave_k1zi3d.png",
   },
   {
     type: "education",
@@ -42,28 +42,32 @@ const experiences = [
   },
   {
     type: "education",
-    date: "Year: Jan 2023 – Present",
-    title: "Full Stack Development – CCBP 4.0 Intensive Program",
-    subtitle: "NxtWave Disruptive Technologies Pvt. Ltd.",
-    Location: "Online | HQ: Manikonda, Hyderabad - 500032",
-    description:
-      "",
-    icon: <FaUniversity />,
+    date: "Year: 2019 - 2020",
+    title: "HSC",
+    subtitle: "Government Higher Secondary School",
+    Location: "Mettupatti, Salem - 636455",
+    description: "Percentage: 58%",
+    icon: <FaSchool />,
     image:
-      "https://res.cloudinary.com/dx5lg8mei/image/upload/v1747633529/nxt_wave_k1zi3d.png",
+      "https://res.cloudinary.com/dx5lg8mei/image/upload/v1747633689/Logo_Tamil_Nadu_iheef7.jpg",
   },
   {
-    type: "work",
-    date: "Year: Oct 2023 -  Current",
-    title: "Full Stack Developer",
-    subtitle: "Sholas Technologies Private Limited",
-    Location: "Teacher's Colony Erode - 638011",
-    description: "Currently working as a Full Stack Developer",
-    icon: <FaBriefcase />,
+    type: "education",
+    date: "Year: 2017 - 2018",
+    title: "SSLC",
+    subtitle: " Government High School",
+    Location: "Sesanchavadi, Salem - 636111",
+    description: "Percentage: 78%",
+    icon: <LiaSchoolSolid />,
     image:
-      "https://res.cloudinary.com/dx5lg8mei/image/upload/v1745030911/WhatsApp_Image_2025-04-17_at_17.21.20_3ba0f6d1_p5owal.png",
+      "https://res.cloudinary.com/dx5lg8mei/image/upload/v1747633689/Logo_Tamil_Nadu_iheef7.jpg",
   },
 ];
+
+const educationExperiences = experiences.filter(
+  (exp) => exp.type === "education"
+);
+const workExperiences = experiences.filter((exp) => exp.type === "work");
 
 const Experience = () => {
   return (
@@ -72,45 +76,92 @@ const Experience = () => {
       id="experience"
     >
       <h2 className="text-3xl font-bold text-center mb-10 text-white">
-        My Experience
+        Experience and Education
       </h2>
-      <VerticalTimeline>
-        {experiences.map((exp, index) => (
-          <VerticalTimelineElement
-            key={index}
-            className={`vertical-timeline-element--${exp.type}`}
-            date={exp.date}
-            icon={exp.icon}
-            iconStyle={{ backgroundColor: "#042f56", color: "white" }}
-            contentStyle={{
-              background: "#042f56",
-              color: "#fff",
-              borderRadius: "10px",
-            }}
-            contentArrowStyle={{ borderRight: "7px solid  #042f56" }}
-          >
-            <div className="flex flex-col md:flex-row items-center gap-4">
-              <img
-                src={exp.image}
-                alt={exp.title}
-                className="w-32 h-32 object-cover rounded-xl shadow-lg"
-              />
-              <div>
-                <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
-                <h4 className="text-md text-[17px] font-semibold text-white">
-                  {exp.subtitle}
-                </h4>
-                <h4 className="text-white text-[15px] font-medium">
-                  {exp.Location}
-                </h4>
-                <p className="text-sm text-[25px] mt-2 text-gray-200 font-semibold ">
-                  {exp.description}
-                </p>
+      <div className="mb-12">
+        <h3 className="text-2xl font-semibold text-white mb-6 text-center">
+          Work Experience
+        </h3>
+        <VerticalTimeline>
+          {workExperiences.map((exp, index) => (
+            <VerticalTimelineElement
+              key={index}
+              className={`vertical-timeline-element--${exp.type}`}
+              date={exp.date}
+              icon={exp.icon}
+              iconStyle={{ backgroundColor: "#042f56", color: "white" }}
+              contentStyle={{
+                background: "#042f56",
+                color: "#fff",
+                borderRadius: "10px",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid  #042f56" }}
+            >
+              <div className="flex flex-col md:flex-row items-center gap-4">
+                <img
+                  src={exp.image}
+                  alt={exp.title}
+                  className="w-32 h-32 object-cover rounded-xl shadow-lg"
+                />
+                <div>
+                  <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
+                  <h4 className="text-md text-[17px] font-semibold text-white">
+                    {exp.subtitle}
+                  </h4>
+                  <h4 className="text-white text-[15px] font-medium">
+                    {exp.Location}
+                  </h4>
+                  <p className="text-sm text-[25px] mt-2 text-gray-200 font-semibold ">
+                    {exp.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          </VerticalTimelineElement>
-        ))}
-      </VerticalTimeline>
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
+      </div>
+      <div className="mb-12">
+        <h3 className="text-2xl font-semibold text-white mb-6 text-center">
+          Education
+        </h3>
+        <VerticalTimeline>
+          {educationExperiences.map((exp, index) => (
+            <VerticalTimelineElement
+              key={index}
+              className={`vertical-timeline-element--${exp.type}`}
+              date={exp.date}
+              icon={exp.icon}
+              iconStyle={{ backgroundColor: "#042f56", color: "white" }}
+              contentStyle={{
+                background: "#042f56",
+                color: "#fff",
+                borderRadius: "10px",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid  #042f56" }}
+            >
+              <div className="flex flex-col md:flex-row items-center gap-4">
+                <img
+                  src={exp.image}
+                  alt={exp.title}
+                  className="w-32 h-32 object-cover rounded-xl shadow-lg"
+                />
+                <div>
+                  <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
+                  <h4 className="text-md text-[17px] font-semibold text-white">
+                    {exp.subtitle}
+                  </h4>
+                  <h4 className="text-white text-[15px] font-medium">
+                    {exp.Location}
+                  </h4>
+                  <p className="text-sm text-[25px] mt-2 text-gray-200 font-semibold ">
+                    {exp.description}
+                  </p>
+                </div>
+              </div>
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
+      </div>
     </div>
   );
 };
