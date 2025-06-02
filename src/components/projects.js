@@ -54,12 +54,12 @@ const projects = [
   },
   {
     id: 4,
-    title: "Rock Paper Scissors",
-    description: "Rock Paper Scissors E-game Application.",
+    title: "Digital Library",
+    description: "Responsive ecommerce library application",
     imageUrl:
-      "https://miro.medium.com/v2/resize:fit:1000/0*pwDqZoXvHo79MoT7.png",
-    projectUrl: "https://stonegamez.ccbp.tech/",
-    skills: ["Bootstrap", "ReactJs"],
+      "https://www.institutefordigitaltransformation.org/wp-content/uploads/Digital-Library-scaled.jpeg",
+    projectUrl: "https://digillibrary.netlify.app/",
+    skills: ["Tailwind Css", "ReactJs","Google Books API"],
     imageStyle: { objectFit: "cover" },
   },
 ];
