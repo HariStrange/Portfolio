@@ -42,6 +42,16 @@ const projects = [
     skills: ["React Js", "Tailwind Css", "data-aos"],
     imageStyle: { objectFit: "cover" },
   },
+    {
+    id: 4,
+    title: "Digital Library",
+    description: "Responsive ecommerce library application",
+    imageUrl:
+      "https://www.institutefordigitaltransformation.org/wp-content/uploads/Digital-Library-scaled.jpeg",
+    projectUrl: "https://digillibrary.netlify.app/",
+    skills: ["Tailwind Css", "ReactJs","Google Books API"],
+    imageStyle: { objectFit: "cover" },
+  },
   {
     id: 3,
     title: "Fly Buy",
@@ -52,16 +62,7 @@ const projects = [
     skills: ["HTML", "CSS", "Bootstrap", "Flexbox"],
     imageStyle: { objectFit: "contain" },
   },
-  {
-    id: 4,
-    title: "Digital Library",
-    description: "Responsive ecommerce library application",
-    imageUrl:
-      "https://www.institutefordigitaltransformation.org/wp-content/uploads/Digital-Library-scaled.jpeg",
-    projectUrl: "https://digillibrary.netlify.app/",
-    skills: ["Tailwind Css", "ReactJs","Google Books API"],
-    imageStyle: { objectFit: "cover" },
-  },
+
 ];
 
 const Projects = () => {
