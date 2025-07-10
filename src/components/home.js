@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./home.css"; // Ensure your keyframes and styles are defined here
 import AOS from "aos";
+import { FaLinkedin, FaInstagram, FaWhatsapp, FaTwitter } from "react-icons/fa";
 import "aos/dist/aos.css";
 
 const Home = () => {
@@ -32,6 +33,49 @@ const Home = () => {
               download
             >
               Download Resume
+            </a>
+          </div>
+          {/* Social Media Icons */}
+          <div className="mt-6 flex flex-row justify-center items-center  p-4 bg-white  gap-3 md:justify-end w-full">
+            <a
+              href="https://www.linkedin.com/in/your-linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-700 hover:text-blue-400 transition transform hover:scale-110 text-2xl"
+            >
+              <i className="fab fa-linkedin">
+                <FaLinkedin />
+              </i>
+            </a>
+            <a
+              href="https://www.instagram.com/your-instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-700 hover:text-pink-500 transition transform hover:scale-110 text-2xl"
+            >
+              <i className="fab fa-instagram">
+                <FaInstagram />
+              </i>
+            </a>
+            <a
+              href="https://wa.me/yourwhatsapplink"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-500 hover:text-green-400 transition transform hover:scale-110 text-2xl"
+            >
+              <i className="fab fa-whatsapp">
+                <FaWhatsapp />
+              </i>
+            </a>
+            <a
+              href="https://twitter.com/your-twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:text-sky-400 transition transform hover:scale-110 text-2xl"
+            >
+              <i className="fab fa-twitter">
+                <FaTwitter />
+              </i>
             </a>
           </div>
         </div>
