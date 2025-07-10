@@ -39,7 +39,7 @@ const Header = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-500 ${
         isScrolled
-          ? "navbar-glass py-2 mx-4 mt-4 rounded-2xl shadow-strong"
+          ? "bg-background/80 backdrop-blur-xl shadow-2xl border-b border-border/50 py-2 -mt-2 mx-4 rounded-2xl"
           : "bg-transparent backdrop-blur-sm py-4"
       }`}
       style={{ 
@@ -52,7 +52,7 @@ const Header = () => {
           className="flex items-center space-x-3"
           whileHover={{ scale: 1.05 }}
         >
-          <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg">
+          <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-lg">H</span>
           </div>
           <h1 className="text-xl font-bold text-foreground">
@@ -77,26 +77,24 @@ const Header = () => {
           
           {/* Theme Toggle */}
           <div className="flex items-center space-x-2 ml-4 px-3 py-2 rounded-full bg-accent/30">
-            <Sun className={`h-4 w-4 transition-colors ${theme === 'light' ? 'text-primary' : 'text-muted-foreground'}`} />
+            <Sun className="h-4 w-4 text-foreground/60" />
             <Switch
               checked={theme === 'dark'}
               onCheckedChange={toggleTheme}
-              className="theme-toggle"
             />
-            <Moon className={`h-4 w-4 transition-colors ${theme === 'dark' ? 'text-primary' : 'text-muted-foreground'}`} />
+            <Moon className="h-4 w-4 text-foreground/60" />
           </div>
         </nav>
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden flex items-center space-x-4">
           <div className="flex items-center space-x-2 px-3 py-2 rounded-full bg-accent/30">
-            <Sun className={`h-4 w-4 transition-colors ${theme === 'light' ? 'text-primary' : 'text-muted-foreground'}`} />
+            <Sun className="h-4 w-4" />
             <Switch
               checked={theme === 'dark'}
               onCheckedChange={toggleTheme}
-              className="theme-toggle"
             />
-            <Moon className={`h-4 w-4 transition-colors ${theme === 'dark' ? 'text-primary' : 'text-muted-foreground'}`} />
+            <Moon className="h-4 w-4" />
           </div>
           <Button
             variant="ghost"
@@ -121,7 +119,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden navbar-glass border-t border-border/50 shadow-strong"
+            className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 shadow-2xl"
           >
             <div className="container mx-auto py-6 px-6">
               <div className="grid grid-cols-1 gap-2">
