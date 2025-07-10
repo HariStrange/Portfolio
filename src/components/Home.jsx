@@ -44,7 +44,7 @@ const Home = () => {
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"
+          className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-white/10 to-blue-500/10 rounded-full blur-3xl border border-white/20"
           animate={{
             scale: [1, 1.2, 1],
             rotate: [0, 180, 360],
@@ -56,7 +56,7 @@ const Home = () => {
           }}
         />
         <motion.div
-          className="absolute -bottom-40 -left-40 w-80 h-80 bg-muted/50 rounded-full blur-3xl"
+          className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-500/10 to-white/10 rounded-full blur-3xl border border-white/20"
           animate={{
             scale: [1.2, 1, 1.2],
             rotate: [360, 180, 0],
@@ -65,6 +65,18 @@ const Home = () => {
             duration: 25,
             repeat: Infinity,
             ease: "linear"
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-white/5 to-blue-500/5 rounded-full blur-3xl border border-white/10"
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
           }}
         />
       </div>
@@ -200,13 +212,13 @@ const Home = () => {
             <div className="relative w-80 h-80 md:w-96 md:h-96">
               {/* Animated Rings */}
               <motion.div
-                className="absolute inset-0 rounded-full border-4 border-primary/20"
+                className="absolute inset-0 rounded-full border-4 border-gradient-to-r from-white/20 to-blue-500/20"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 style={{ borderStyle: "dashed" }}
               />
               <motion.div
-                className="absolute inset-4 rounded-full border-2 border-muted-foreground/20"
+                className="absolute inset-4 rounded-full border-2 border-gradient-to-r from-blue-500/20 to-white/20"
                 animate={{ rotate: -360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                 style={{ borderStyle: "dashed" }}
@@ -227,7 +239,7 @@ const Home = () => {
 
               {/* Floating Elements */}
               <motion.div
-                className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full shadow-lg"
+                className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-white to-blue-500 rounded-full shadow-lg border border-white/30"
                 animate={{
                   y: [0, -10, 0],
                 }}
@@ -238,7 +250,7 @@ const Home = () => {
                 }}
               />
               <motion.div
-                className="absolute -bottom-4 -left-4 w-6 h-6 bg-secondary rounded-full shadow-lg"
+                className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-br from-blue-500 to-white rounded-full shadow-lg border border-white/30"
                 animate={{
                   y: [0, 10, 0],
                 }}
@@ -249,7 +261,7 @@ const Home = () => {
                 }}
               />
               <motion.div
-                className="absolute top-1/2 -left-6 w-4 h-4 bg-accent rounded-full shadow-lg"
+                className="absolute top-1/2 -left-6 w-4 h-4 bg-gradient-to-br from-white to-blue-500 rounded-full shadow-lg border border-white/30"
                 animate={{
                   x: [0, -5, 0],
                 }}

@@ -8,6 +8,7 @@ import { useTheme } from "../contexts/ThemeContext";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const { theme, toggleTheme } = useTheme();
 
   const toggleMenu = () => {
@@ -17,6 +18,23 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Update active section based on scroll position
+      const sections = ["home", "about", "skills", "experience", "certificates", "projects", "contact"];
+      const scrollPosition = window.scrollY + 100;
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -33,13 +51,21 @@ const Header = () => {
     { href: "#contact", label: "Contact", icon: <Mail className="w-4 h-4" /> },
   ];
 
+  const handleNavClick = (href) => {
+    setIsMenuOpen(false);
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-xl shadow-2xl border-b border-border/50 py-2 -mt-2 mx-4 rounded-2xl"
+          ? "bg-background/70 backdrop-blur-xl shadow-2xl border-b border-border/30 py-2 mx-4 mt-4 rounded-2xl"
           : "bg-transparent backdrop-blur-sm py-4"
       }`}
       style={{ 
@@ -52,11 +78,11 @@ const Header = () => {
           className="flex items-center space-x-3"
           whileHover={{ scale: 1.05 }}
         >
-          <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center shadow-lg">
             <span className="text-primary-foreground font-bold text-lg">H</span>
           </div>
           <h1 className="text-xl font-bold text-foreground">
-            <a href="#home">Hariharan N</a>
+            <a href="#home" onClick={() => handleNavClick("#home")}>Hariharan N</a>
           </h1>
         </motion.div>
 
@@ -66,17 +92,22 @@ const Header = () => {
             <motion.a
               key={item.href}
               href={item.href}
-              className="flex items-center space-x-2 px-4 py-2 rounded-full text-foreground/80 hover:text-foreground hover:bg-accent/50 transition-all font-medium"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(item.href);
+              }}
+              className={`px-4 py-2 rounded-full text-foreground/80 hover:text-foreground hover:bg-accent/50 transition-all font-medium ${
+                activeSection === item.href.slice(1) ? 'bg-primary/10 text-primary' : ''
+              }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {item.icon}
               <span>{item.label}</span>
             </motion.a>
           ))}
           
           {/* Theme Toggle */}
-          <div className="flex items-center space-x-2 ml-4 px-3 py-2 rounded-full bg-accent/30">
+          <div className="flex items-center space-x-2 ml-4 px-3 py-2 rounded-full bg-accent/30 backdrop-blur-sm">
             <Sun className="h-4 w-4 text-foreground/60" />
             <Switch
               checked={theme === 'dark'}
@@ -88,7 +119,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden flex items-center space-x-4">
-          <div className="flex items-center space-x-2 px-3 py-2 rounded-full bg-accent/30">
+          <div className="flex items-center space-x-2 px-3 py-2 rounded-full bg-accent/30 backdrop-blur-sm">
             <Sun className="h-4 w-4" />
             <Switch
               checked={theme === 'dark'}
@@ -127,8 +158,13 @@ const Header = () => {
                   <motion.a
                     key={item.href}
                     href={item.href}
-                    className="flex items-center space-x-3 py-4 px-4 text-foreground/80 hover:text-foreground hover:bg-accent/50 rounded-xl transition-all font-medium"
-                    onClick={toggleMenu}
+                    className={`flex items-center space-x-3 py-4 px-4 text-foreground/80 hover:text-foreground hover:bg-accent/50 rounded-xl transition-all font-medium ${
+                      activeSection === item.href.slice(1) ? 'bg-primary/10 text-primary' : ''
+                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(item.href);
+                    }}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}

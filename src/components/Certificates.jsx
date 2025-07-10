@@ -114,8 +114,8 @@ const Certificates = () => {
                     src={currentCert.image}
                     alt={currentCert.title}
                     className="w-24 h-24 object-contain"
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
                     transition={{ type: "spring", stiffness: 200 }}
                   />
                   <div className="absolute top-4 right-4">
@@ -152,8 +152,8 @@ const Certificates = () => {
                 {certificates.map((_, index) => (
                   <button
                     key={index}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      index === currentIndex ? "bg-primary w-8" : "bg-muted"
+                    className={`h-2 rounded-full transition-all ${
+                      index === currentIndex ? "bg-primary w-8" : "bg-muted w-2"
                     }`}
                     onClick={() => setCurrentIndex(index)}
                   />
