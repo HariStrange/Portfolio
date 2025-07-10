@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, Calendar, Users, Zap, Code, Briefcase, GraduationCap, Heart } from "lucide-react";
+import { ExternalLink, Github, Calendar, Users, Zap, Code, Briefcase, GraduationCap, Heart, Star } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
@@ -10,19 +10,19 @@ const projectCategories = [
     id: "industry",
     label: "Industry Projects",
     icon: <Briefcase className="w-4 h-4" />,
-    description: "Professional projects from my current role"
+    description: "Professional projects from my current role at Sholas Technologies"
   },
   {
     id: "college",
     label: "Academic Projects",
     icon: <GraduationCap className="w-4 h-4" />,
-    description: "Projects completed during my education"
+    description: "Projects completed during NxtWave CCBP 4.0 program"
   },
   {
     id: "freetime",
     label: "Personal Projects",
     icon: <Heart className="w-4 h-4" />,
-    description: "Side projects and experiments"
+    description: "Side projects and personal experiments"
   },
   {
     id: "associate",
@@ -40,65 +40,68 @@ const projects = {
       type: "SaaS Product",
       description: "AI-powered document intelligence platform that extracts structured data from documents using OCR and machine learning. Features dynamic prompt generation and real-time processing with multi-tenant architecture.",
       image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&h=300&fit=crop",
-      technologies: ["Spring Boot", "React.js", "PostgreSQL", "Node.js", "AI/ML", "OCR", "Docker"],
+      technologies: ["Spring Boot", "React.js", "PostgreSQL", "Node.js", "AI/ML", "OCR", "JWT", "REST APIs"],
       features: [
         "OCR-based document processing",
-        "AI-powered data extraction",
-        "Dynamic prompt generation",
-        "Real-time status tracking",
-        "Multi-tenant architecture",
-        "RESTful API design"
+        "AI-powered data extraction using Node.js model servers",
+        "Dynamic prompt generator for JSON conversion",
+        "Animated dashboards with real-time tracking",
+        "Rule-based status tracking system",
+        "Multi-tenant SaaS architecture"
       ],
       projectUrl: "#",
       githubUrl: "#",
       status: "Production",
       team: "5 developers",
       duration: "6 months",
-      role: "Lead Full Stack Developer"
+      role: "Full Stack Developer",
+      highlights: ["Led backend architecture", "Implemented AI integration", "Built responsive dashboards"]
     },
     {
       id: 2,
       title: "TaxiPik - Cab Booking System",
       type: "Mobile Application",
-      description: "Comprehensive cab booking platform with real-time tracking, payment integration, and user-friendly interface for seamless ride booking experience. Built with modern web technologies.",
+      description: "Comprehensive cab booking platform with real-time tracking, payment integration, and seamless user experience. Contributed to UI development and API integration.",
       image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&h=300&fit=crop",
       technologies: ["React.js", "Spring Boot", "PostgreSQL", "Payment Gateway", "Maps API", "WebSocket"],
       features: [
-        "Real-time ride booking",
-        "GPS location tracking",
-        "Payment integration",
-        "Driver-rider matching",
-        "Ride history & analytics",
-        "Push notifications"
+        "Real-time ride booking flow",
+        "GPS location tracking integration",
+        "Payment module implementation",
+        "Driver-rider matching algorithm",
+        "Ride history and analytics",
+        "Push notification system"
       ],
       projectUrl: "#",
       githubUrl: "#",
       status: "Development",
       team: "4 developers",
       duration: "4 months",
-      role: "Full Stack Developer"
+      role: "Frontend Developer",
+      highlights: ["UI/UX development", "API integration", "Real-time features"]
     },
     {
       id: 3,
       title: "ATOM2 - Business Website",
       type: "Corporate Website",
-      description: "Modern, responsive business website with enhanced UI/UX, interactive animations, and optimized performance for better user engagement and conversion rates.",
+      description: "Modern business website with enhanced UI/UX design. Contributed to layout structuring, UI enhancements, and interactive animations using Bootstrap.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      technologies: ["React.js", "Bootstrap", "Framer Motion", "Responsive Design", "SEO"],
+      technologies: ["React.js", "Bootstrap", "Framer Motion", "AOS", "Responsive Design"],
       features: [
-        "Responsive design",
-        "Interactive animations",
-        "Contact form integration",
+        "Responsive layout structuring",
+        "Interactive animations and transitions",
+        "Form interactions and validation",
         "SEO optimization",
         "Performance optimization",
-        "Analytics integration"
+        "Cross-browser compatibility"
       ],
       projectUrl: "#",
       githubUrl: "#",
       status: "Completed",
       team: "3 developers",
       duration: "2 months",
-      role: "Frontend Developer"
+      role: "Frontend Developer",
+      highlights: ["Layout design", "Animation implementation", "Form optimization"]
     }
   ],
   college: [
@@ -110,19 +113,21 @@ const projects = {
       image: "https://assets.ccbp.in/frontend/react-js/logo-img.png",
       technologies: ["React.js", "Bootstrap", "Node.js", "Express.js", "SQLite", "JWT"],
       features: [
-        "Job search & filtering",
-        "Application tracking",
-        "User authentication",
-        "Profile management",
-        "Company listings",
-        "Resume upload"
+        "Advanced job search and filtering",
+        "Application tracking system",
+        "Secure user authentication",
+        "Profile management dashboard",
+        "Company listings and details",
+        "Resume upload functionality"
       ],
       projectUrl: "https://jobbyapzp.ccbp.tech",
       githubUrl: "#",
       status: "Live",
       team: "Solo project",
       duration: "3 months",
-      role: "Full Stack Developer"
+      role: "Full Stack Developer",
+      highlights: ["Complete CRUD operations", "Authentication system", "Responsive design"],
+      credentials: "Username: rahul, Password: rahul@2021"
     },
     {
       id: 5,
@@ -132,70 +137,97 @@ const projects = {
       image: "https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png",
       technologies: ["React.js", "Bootstrap", "Node.js", "Express.js", "SQLite", "Video API"],
       features: [
-        "Video streaming",
-        "User authentication",
-        "Video categorization",
-        "Search functionality",
-        "Responsive design",
-        "Playlist management"
+        "Video streaming functionality",
+        "User authentication system",
+        "Video categorization and search",
+        "Responsive video player",
+        "Playlist management",
+        "Dark/Light theme toggle"
       ],
       projectUrl: "https://nxtytwatch.ccbp.tech",
       githubUrl: "#",
       status: "Live",
       team: "Solo project",
       duration: "2 months",
-      role: "Full Stack Developer"
+      role: "Full Stack Developer",
+      highlights: ["Video streaming", "Theme implementation", "Search functionality"],
+      credentials: "Username: rahul, Password: rahul@2021"
+    },
+    {
+      id: 6,
+      title: "Fly Buy E-Commerce",
+      type: "E-Commerce Platform",
+      description: "Responsive e-commerce application with modern design, product catalog, and shopping cart functionality built with HTML, CSS, and Bootstrap.",
+      image: "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-website-logo-img.png",
+      technologies: ["HTML", "CSS", "Bootstrap", "Flexbox", "Responsive Design"],
+      features: [
+        "Product catalog display",
+        "Shopping cart functionality",
+        "Responsive grid layout",
+        "Modern UI design",
+        "Cross-device compatibility",
+        "Optimized performance"
+      ],
+      projectUrl: "https://flybuy.ccbp.tech",
+      githubUrl: "#",
+      status: "Live",
+      team: "Solo project",
+      duration: "1 month",
+      role: "Frontend Developer",
+      highlights: ["Responsive design", "Modern UI", "Performance optimization"]
     }
   ],
   freetime: [
     {
-      id: 6,
+      id: 7,
       title: "Digital Library",
       type: "E-Library Platform",
       description: "Responsive e-commerce library application with Google Books API integration for comprehensive book search and management with modern UI design.",
       image: "https://www.institutefordigitaltransformation.org/wp-content/uploads/Digital-Library-scaled.jpeg",
       technologies: ["React.js", "Tailwind CSS", "Google Books API", "Local Storage"],
       features: [
-        "Book search & discovery",
-        "API integration",
-        "Responsive design",
-        "Book details & reviews",
+        "Google Books API integration",
+        "Advanced book search and filtering",
+        "Responsive design implementation",
+        "Book details and reviews display",
         "User-friendly interface",
-        "Wishlist functionality"
+        "Wishlist and favorites functionality"
       ],
       projectUrl: "https://digillibrary.netlify.app/",
       githubUrl: "#",
       status: "Live",
       team: "Solo project",
       duration: "1 month",
-      role: "Full Stack Developer"
+      role: "Full Stack Developer",
+      highlights: ["API integration", "Modern design", "Search functionality"]
     },
     {
-      id: 7,
+      id: 8,
       title: "Weather Dashboard",
       type: "Web Application",
       description: "Real-time weather application with location-based forecasts, interactive maps, and detailed weather analytics with beautiful data visualizations.",
       image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=500&h=300&fit=crop",
       technologies: ["React.js", "Weather API", "Chart.js", "Geolocation", "CSS3"],
       features: [
-        "Real-time weather data",
-        "Location-based forecasts",
+        "Real-time weather data fetching",
+        "Location-based weather forecasts",
         "Interactive weather maps",
-        "7-day forecast",
-        "Weather alerts",
-        "Data visualization"
+        "7-day weather forecast",
+        "Weather alerts and notifications",
+        "Data visualization with charts"
       ],
       projectUrl: "#",
       githubUrl: "#",
-      status: "Completed",
+      status: "Development",
       team: "Solo project",
       duration: "2 weeks",
-      role: "Frontend Developer"
+      role: "Frontend Developer",
+      highlights: ["API integration", "Data visualization", "Responsive design"]
     }
   ],
   associate: [
     {
-      id: 8,
+      id: 9,
       title: "Dood Technologies Website",
       type: "Corporate Website",
       description: "Company's official website with modern design, responsive layout, and interactive elements. Collaborated with design team for optimal user experience.",
@@ -203,10 +235,10 @@ const projects = {
       technologies: ["React.js", "Tailwind CSS", "AOS", "Responsive Design"],
       features: [
         "Modern responsive design",
-        "Interactive animations",
-        "Contact integration",
-        "SEO optimized",
-        "Fast loading",
+        "Interactive animations with AOS",
+        "Contact form integration",
+        "SEO optimized structure",
+        "Fast loading performance",
         "Mobile-first approach"
       ],
       projectUrl: "https://doodstech.netlify.app/",
@@ -214,20 +246,21 @@ const projects = {
       status: "Live",
       team: "3 developers",
       duration: "1 month",
-      role: "Frontend Developer"
+      role: "Frontend Developer",
+      highlights: ["Team collaboration", "Modern design", "Performance optimization"]
     },
     {
-      id: 9,
+      id: 10,
       title: "Cyber Technologies Portal",
       type: "Business Platform",
       description: "Corporate website for technology company with service showcases, client testimonials, and modern design patterns. Team collaboration project.",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwRdblf3UxMKXKrQFHjBhqpyKtlu5ZwLQVmARk256YVRJa4VqzLY5lx-_b2i4LoerUjxg&usqp=CAU",
       technologies: ["React.js", "Tailwind CSS", "AOS", "Form Handling"],
       features: [
-        "Service showcases",
-        "Client testimonials",
-        "Contact forms",
-        "Responsive layout",
+        "Service showcase sections",
+        "Client testimonials display",
+        "Contact forms with validation",
+        "Responsive layout design",
         "Performance optimized",
         "Cross-browser compatible"
       ],
@@ -236,7 +269,8 @@ const projects = {
       status: "Live",
       team: "2 developers",
       duration: "3 weeks",
-      role: "Frontend Developer"
+      role: "Frontend Developer",
+      highlights: ["Team collaboration", "Service showcase", "Form handling"]
     }
   ]
 };
@@ -343,6 +377,11 @@ const Projects = () => {
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       {project.description}
                     </p>
+                    {project.credentials && (
+                      <div className="mt-2 p-2 bg-muted/50 rounded text-xs">
+                        <strong>Demo Credentials:</strong> {project.credentials}
+                      </div>
+                    )}
                   </CardHeader>
 
                   <CardContent className="space-y-4">
@@ -364,6 +403,24 @@ const Projects = () => {
                       <span className="text-sm font-medium">{project.role}</span>
                     </div>
 
+                    {/* Highlights */}
+                    {project.highlights && (
+                      <div>
+                        <h4 className="font-semibold mb-2 text-sm flex items-center">
+                          <Star className="w-4 h-4 mr-1" />
+                          Key Highlights:
+                        </h4>
+                        <ul className="text-sm text-muted-foreground space-y-1">
+                          {project.highlights.slice(0, 2).map((highlight, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <span className="w-1 h-1 bg-primary rounded-full mt-2 mr-2 flex-shrink-0" />
+                              {highlight}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
                     {/* Technologies */}
                     <div>
                       <h4 className="font-semibold mb-2 text-sm">Technologies:</h4>
@@ -379,22 +436,6 @@ const Projects = () => {
                           </Badge>
                         )}
                       </div>
-                    </div>
-
-                    {/* Key Features */}
-                    <div>
-                      <h4 className="font-semibold mb-2 text-sm flex items-center">
-                        <Zap className="w-4 h-4 mr-1" />
-                        Key Features:
-                      </h4>
-                      <ul className="text-sm text-muted-foreground space-y-1">
-                        {project.features.slice(0, 3).map((feature, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <span className="w-1 h-1 bg-primary rounded-full mt-2 mr-2 flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
                     </div>
 
                     {/* Action Buttons */}
