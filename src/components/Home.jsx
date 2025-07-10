@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Download, MapPin, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Download, MapPin, Phone, Code, Database, Server } from "lucide-react";
 import { Button } from "./ui/button";
+import { Card, CardContent } from "./ui/card";
+import { Badge } from "./ui/badge";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -14,22 +16,31 @@ const Home = () => {
     {
       icon: <Github className="w-5 h-5" />,
       href: "https://github.com/natarajhari",
-      label: "GitHub"
+      label: "GitHub",
+      color: "hover:bg-gray-900 hover:text-white"
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
       href: "https://linkedin.com/in/hariharan-natarajan",
-      label: "LinkedIn"
+      label: "LinkedIn",
+      color: "hover:bg-blue-600 hover:text-white"
     },
     {
       icon: <Mail className="w-5 h-5" />,
       href: "mailto:natarajhari1@gmail.com",
-      label: "Email"
+      label: "Email",
+      color: "hover:bg-red-500 hover:text-white"
     }
   ];
 
+  const techStack = [
+    { icon: <Code className="w-5 h-5" />, label: "Frontend", tech: "React.js" },
+    { icon: <Server className="w-5 h-5" />, label: "Backend", tech: "Spring Boot" },
+    { icon: <Database className="w-5 h-5" />, label: "Database", tech: "PostgreSQL" }
+  ];
+
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden pt-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -62,62 +73,90 @@ const Home = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <motion.div
-            className="space-y-6 text-center lg:text-left"
+            className="space-y-8 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="space-y-2"
+              className="space-y-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <p className="text-muted-foreground text-lg">Hello, I'm</p>
-              <h1 className="text-4xl md:text-6xl font-bold text-foreground">
-                Hariharan N
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-                Full Stack Developer
-              </p>
+              <Badge variant="outline" className="text-sm px-4 py-2">
+                Available for opportunities
+              </Badge>
+              <div>
+                <p className="text-muted-foreground text-lg mb-2">Hello, I'm</p>
+                <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight">
+                  Hariharan N
+                </h1>
+                <div className="flex items-center justify-center lg:justify-start space-x-2 mt-4">
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                  <p className="text-xl md:text-2xl text-muted-foreground font-medium">
+                    Full Stack Developer
+                  </p>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
-              className="flex items-center justify-center lg:justify-start space-x-4 text-sm text-muted-foreground"
+              className="flex items-center justify-center lg:justify-start space-x-6 text-sm text-muted-foreground"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <div className="flex items-center space-x-1">
+              <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
                 <span>+91-8760370499</span>
               </div>
-              <div className="flex items-center space-x-1">
+              <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4" />
                 <span>Salem, Tamil Nadu</span>
               </div>
             </motion.div>
 
             <motion.p
-              className="text-lg text-muted-foreground max-w-2xl"
+              className="text-lg text-muted-foreground max-w-2xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
               Passionate Full Stack Developer with expertise in building scalable web applications 
               using Spring Boot, React.js, and PostgreSQL. Currently contributing to innovative 
-              projects at Sholas Technologies.
+              projects at <span className="text-foreground font-semibold">Sholas Technologies</span>.
             </motion.p>
 
+            {/* Tech Stack */}
             <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4"
+              className="grid grid-cols-3 gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+            >
+              {techStack.map((item, index) => (
+                <Card key={index} className="bg-card/50 backdrop-blur-sm border-border/50">
+                  <CardContent className="p-4 text-center">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                      {item.icon}
+                    </div>
+                    <p className="text-xs text-muted-foreground">{item.label}</p>
+                    <p className="text-sm font-semibold">{item.tech}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
             >
               <Button
                 size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg"
                 asChild
               >
                 <a
@@ -125,7 +164,7 @@ const Home = () => {
                   download
                   className="flex items-center space-x-2"
                 >
-                  <Download className="w-4 h-4" />
+                  <Download className="w-5 h-5" />
                   <span>Download Resume</span>
                 </a>
               </Button>
@@ -137,8 +176,8 @@ const Home = () => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-secondary hover:bg-secondary/80 transition-colors"
-                    whileHover={{ scale: 1.1 }}
+                    className={`p-3 rounded-full bg-secondary hover:bg-secondary/80 transition-all duration-300 ${link.color}`}
+                    whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -175,7 +214,7 @@ const Home = () => {
               
               {/* Profile Image */}
               <motion.div
-                className="absolute inset-8 rounded-full overflow-hidden shadow-2xl"
+                className="absolute inset-8 rounded-full overflow-hidden shadow-2xl ring-4 ring-background"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -188,7 +227,7 @@ const Home = () => {
 
               {/* Floating Elements */}
               <motion.div
-                className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full"
+                className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full shadow-lg"
                 animate={{
                   y: [0, -10, 0],
                 }}
@@ -199,12 +238,23 @@ const Home = () => {
                 }}
               />
               <motion.div
-                className="absolute -bottom-4 -left-4 w-6 h-6 bg-secondary rounded-full"
+                className="absolute -bottom-4 -left-4 w-6 h-6 bg-secondary rounded-full shadow-lg"
                 animate={{
                   y: [0, 10, 0],
                 }}
                 transition={{
                   duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <motion.div
+                className="absolute top-1/2 -left-6 w-4 h-4 bg-accent rounded-full shadow-lg"
+                animate={{
+                  x: [0, -5, 0],
+                }}
+                transition={{
+                  duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
