@@ -104,14 +104,32 @@ const AboutUs = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="relative">
+            <div className="relative w-full">
               <Swiper
                 ref={swiperRef}
                 modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
-                effect="coverflow"
+                effect={window.innerWidth > 768 ? "coverflow" : "slide"}
                 grabCursor={true}
                 centeredSlides={true}
-                slidesPerView="auto"
+                slidesPerView={1}
+                spaceBetween={20}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    effect: "slide"
+                  },
+                  768: {
+                    slidesPerView: "auto",
+                    spaceBetween: 30,
+                    effect: "coverflow"
+                  },
+                  1024: {
+                    slidesPerView: "auto",
+                    spaceBetween: 40,
+                    effect: "coverflow"
+                  }
+                }}
                 coverflowEffect={{
                   rotate: 50,
                   stretch: 0,
@@ -127,16 +145,20 @@ const AboutUs = () => {
                   clickable: true,
                   dynamicBullets: true,
                 }}
+                navigation={{
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+                }}
                 loop={true}
-                className="professional-swiper"
+                className="professional-swiper w-full"
               >
                 {galleryImages.map((image) => (
-                  <SwiperSlide key={image.id} className="swiper-slide-custom">
+                  <SwiperSlide key={image.id} className="swiper-slide-custom w-full">
                     <div className="relative group">
                       <img
                         src={image.url}
                         alt={image.alt}
-                        className="w-full h-[400px] object-cover rounded-xl shadow-2xl"
+                        className="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded-xl shadow-2xl"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -145,6 +167,10 @@ const AboutUs = () => {
                     </div>
                   </SwiperSlide>
                 ))}
+                
+                {/* Navigation buttons - hidden on mobile */}
+                <div className="swiper-button-prev hidden md:flex"></div>
+                <div className="swiper-button-next hidden md:flex"></div>
               </Swiper>
             </div>
           </motion.div>
