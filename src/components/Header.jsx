@@ -45,7 +45,7 @@ const Header = () => {
     >
       <div className="container mx-auto flex justify-between items-center p-4">
         <motion.h1 
-          className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+          className="text-2xl font-bold text-foreground"
           whileHover={{ scale: 1.05 }}
         >
           <a href="#home">Hariharan N</a>

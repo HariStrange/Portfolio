@@ -130,7 +130,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-background to-accent/5">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-16"
@@ -138,7 +138,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Featured Projects
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -169,20 +169,19 @@ const Projects = () => {
                   <div className="absolute top-4 right-4">
                     <Badge 
                       variant={project.status === 'Live' ? 'default' : project.status === 'Production' ? 'secondary' : 'outline'}
-                      className="bg-background/80"
                     >
                       {project.status}
                     </Badge>
                   </div>
                   <div className="absolute bottom-4 left-4">
-                    <Badge variant="outline" className="bg-background/80">
+                    <Badge variant="outline">
                       {project.type}
                     </Badge>
                   </div>
                 </div>
 
                 <CardHeader>
-                  <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
                     {project.title}
                   </CardTitle>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -229,7 +228,7 @@ const Projects = () => {
                     <ul className="text-sm text-muted-foreground space-y-1">
                       {project.features.slice(0, 3).map((feature, idx) => (
                         <li key={idx} className="flex items-start">
-                          <span className="w-1 h-1 bg-blue-600 rounded-full mt-2 mr-2 flex-shrink-0" />
+                          <span className="w-1 h-1 bg-primary rounded-full mt-2 mr-2 flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
@@ -241,7 +240,7 @@ const Projects = () => {
                     <Button
                       variant="default"
                       size="sm"
-                      className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                      className="flex-1"
                       onClick={() => window.open(project.projectUrl, '_blank')}
                     >
                       <ExternalLink className="w-4 h-4 mr-1" />

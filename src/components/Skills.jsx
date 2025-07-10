@@ -56,7 +56,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background to-accent/10">
+    <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-16"
@@ -64,7 +64,7 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Technical Skills
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -79,8 +79,8 @@ const Skills = () => {
               key={category.title}
               className={`px-6 py-3 rounded-full font-medium transition-all ${
                 activeCategory === index
-                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                  : "bg-accent hover:bg-accent/80 text-foreground"
+                  ? "bg-primary text-primary-foreground shadow-lg"
+                  : "bg-secondary hover:bg-secondary/80 text-secondary-foreground"
               }`}
               onClick={() => setActiveCategory(index)}
               whileHover={{ scale: 1.05 }}
@@ -120,7 +120,7 @@ const Skills = () => {
                       <h3 className="font-semibold text-foreground">{skill.name}</h3>
                       <div className="w-full bg-accent/30 rounded-full h-2 mt-2">
                         <motion.div
-                          className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full"
+                          className="bg-primary h-2 rounded-full"
                           initial={{ width: 0 }}
                           animate={{ width: `${skill.level}%` }}
                           transition={{ delay: index * 0.1 + 0.5, duration: 1 }}

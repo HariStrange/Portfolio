@@ -72,14 +72,14 @@ const workExperiences = experiences.filter((exp) => exp.type === "work");
 const Experience = () => {
   return (
     <div
-      className="bg-gradient-to-br from-[#032442] via-[#193d5f] to-[#2c4f70] p-6 min-h-screen w-screen"
+      className="bg-background p-6 min-h-screen w-screen"
       id="experience"
     >
-      <h2 className="text-3xl font-bold text-center mb-10 text-white">
+      <h2 className="text-3xl font-bold text-center mb-10 text-foreground">
         Experience and Education
       </h2>
       <div className="mb-12">
-        <h3 className="text-2xl font-semibold text-white mb-6 text-center">
+        <h3 className="text-2xl font-semibold text-foreground mb-6 text-center">
           Work Experience
         </h3>
         <VerticalTimeline>
@@ -89,13 +89,14 @@ const Experience = () => {
               className={`vertical-timeline-element--${exp.type}`}
               date={exp.date}
               icon={exp.icon}
-              iconStyle={{ backgroundColor: "#042f56", color: "white" }}
+              iconStyle={{ backgroundColor: "hsl(var(--primary))", color: "hsl(var(--primary-foreground))" }}
               contentStyle={{
-                background: "#042f56",
-                color: "#fff",
+                background: "hsl(var(--card))",
+                color: "hsl(var(--card-foreground))",
                 borderRadius: "10px",
+                border: "1px solid hsl(var(--border))"
               }}
-              contentArrowStyle={{ borderRight: "7px solid  #042f56" }}
+              contentArrowStyle={{ borderRight: "7px solid hsl(var(--card))" }}
             >
               <div className="flex flex-col md:flex-row items-center gap-4">
                 <img
@@ -104,14 +105,14 @@ const Experience = () => {
                   className="w-32 h-32 object-cover rounded-xl shadow-lg"
                 />
                 <div>
-                  <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
-                  <h4 className="text-md text-[17px] font-semibold text-white">
+                  <h3 className="text-2xl font-bold text-card-foreground">{exp.title}</h3>
+                  <h4 className="text-md text-[17px] font-semibold text-card-foreground">
                     {exp.subtitle}
                   </h4>
-                  <h4 className="text-white text-[15px] font-medium">
+                  <h4 className="text-muted-foreground text-[15px] font-medium">
                     {exp.Location}
                   </h4>
-                  <p className="text-sm text-[25px] mt-2 text-gray-200 font-semibold ">
+                  <p className="text-sm text-[25px] mt-2 text-muted-foreground font-semibold ">
                     {exp.description}
                   </p>
                 </div>
@@ -121,7 +122,7 @@ const Experience = () => {
         </VerticalTimeline>
       </div>
       <div className="mb-12">
-        <h3 className="text-2xl font-semibold text-white mb-6 text-center">
+        <h3 className="text-2xl font-semibold text-foreground mb-6 text-center">
           Education
         </h3>
         <VerticalTimeline>
@@ -131,13 +132,14 @@ const Experience = () => {
               className={`vertical-timeline-element--${exp.type}`}
               date={exp.date}
               icon={exp.icon}
-              iconStyle={{ backgroundColor: "#042f56", color: "white" }}
+              iconStyle={{ backgroundColor: "hsl(var(--primary))", color: "hsl(var(--primary-foreground))" }}
               contentStyle={{
-                background: "#042f56",
-                color: "#fff",
+                background: "hsl(var(--card))",
+                color: "hsl(var(--card-foreground))",
                 borderRadius: "10px",
+                border: "1px solid hsl(var(--border))"
               }}
-              contentArrowStyle={{ borderRight: "7px solid  #042f56" }}
+              contentArrowStyle={{ borderRight: "7px solid hsl(var(--card))" }}
             >
               <div className="flex flex-col md:flex-row items-center gap-4">
                 <img
@@ -146,14 +148,14 @@ const Experience = () => {
                   className="w-32 h-32 object-cover rounded-xl shadow-lg"
                 />
                 <div>
-                  <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
-                  <h4 className="text-md text-[17px] font-semibold text-white">
+                  <h3 className="text-2xl font-bold text-card-foreground">{exp.title}</h3>
+                  <h4 className="text-md text-[17px] font-semibold text-card-foreground">
                     {exp.subtitle}
                   </h4>
-                  <h4 className="text-white text-[15px] font-medium">
+                  <h4 className="text-muted-foreground text-[15px] font-medium">
                     {exp.Location}
                   </h4>
-                  <p className="text-sm text-[25px] mt-2 text-gray-200 font-semibold ">
+                  <p className="text-sm text-[25px] mt-2 text-muted-foreground font-semibold ">
                     {exp.description}
                   </p>
                 </div>

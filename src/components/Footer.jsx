@@ -38,7 +38,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-background to-accent/10 border-t border-border/50">
+    <footer className="bg-muted/30 border-t border-border">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Section */}
@@ -48,7 +48,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h3 className="text-2xl font-bold text-foreground">
               Hariharan N
             </h3>
             <p className="text-muted-foreground leading-relaxed">

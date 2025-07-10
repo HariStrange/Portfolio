@@ -95,7 +95,7 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-accent/5 to-background">
+    <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-16"
@@ -103,7 +103,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Get In Touch
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -138,7 +138,7 @@ const Contact = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
                     >
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white">
+                      <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground">
                         {info.icon}
                       </div>
                       <div>
@@ -213,7 +213,7 @@ const Contact = () => {
                           id="first_name"
                           name="first_name"
                           type="text"
-                          className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                          className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary transition-all"
                           value={formData.first_name}
                           onChange={handleChange}
                           required
@@ -227,7 +227,7 @@ const Contact = () => {
                           id="last_name"
                           name="last_name"
                           type="text"
-                          className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                          className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary transition-all"
                           value={formData.last_name}
                           onChange={handleChange}
                           required
@@ -242,7 +242,7 @@ const Contact = () => {
                         id="email"
                         name="email"
                         type="email"
-                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary transition-all"
                         value={formData.email}
                         onChange={handleChange}
                         required
@@ -256,7 +256,7 @@ const Contact = () => {
                         id="message"
                         name="message"
                         rows="6"
-                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-none"
+                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none"
                         value={formData.message}
                         onChange={handleChange}
                         required
@@ -264,7 +264,7 @@ const Contact = () => {
                     </div>
                     <Button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                      className="w-full"
                       disabled={isLoading}
                     >
                       {isLoading ? (
@@ -315,7 +315,6 @@ const Contact = () => {
             </p>
             <Button
               onClick={() => setSuccess(false)}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
             >
               Close
             </Button>

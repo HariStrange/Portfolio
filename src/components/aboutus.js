@@ -5,9 +5,9 @@ const AboutUs = () => {
   const isMobile = window.innerWidth <= 768;
 
   return (
-    <div className="px-6 py-12 bg-[#092c4b] w-full min-h-screen flex justify-center items-center">
+    <div className="px-6 py-20 bg-background w-full min-h-screen flex justify-center items-center">
       <div className="max-w-6xl w-full">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-12">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-12">
           About Me
         </h2>
 
@@ -26,7 +26,7 @@ const AboutUs = () => {
 
           {/* ✅ Text First on Desktop, Second on Mobile */}
           <div
-            className="order-2 md:order-1 text-gray-200 space-y-5"
+            className="order-2 md:order-1 text-muted-foreground space-y-5"
             data-aos={isMobile ? "fade-up" : "fade-right"}
           >
             <p className="text-lg leading-relaxed">

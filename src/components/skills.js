@@ -29,8 +29,8 @@ const Skills = () => {
     }, []);
 
     return (
-        <section className="bg-gradient-to-br from-[#032442] via-[#193d5f] to-[#2c4f70] py-16 px-4">
-            <h2 className="text-4xl font-bold text-center text-white mb-12">My Skills</h2>
+        <section className="bg-muted/30 py-16 px-4">
+            <h2 className="text-4xl font-bold text-center text-foreground mb-12">My Skills</h2>
             <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                 {skills.map((skill, index) => {
                     const aosAnimation = isMobile
@@ -42,7 +42,7 @@ const Skills = () => {
                     return (
                         <div
                             key={index}
-                            className="flex flex-col items-center bg-white/10 rounded-xl p-5 shadow-lg hover:shadow-xl hover:bg-white/20 transition duration-300 transform hover:-translate-y-2"
+                            className="flex flex-col items-center bg-card rounded-xl p-5 shadow-lg hover:shadow-xl hover:bg-card/80 transition duration-300 transform hover:-translate-y-2 border border-border"
                             data-aos={aosAnimation}
                             data-aos-delay={index * 100}
                         >
@@ -51,7 +51,7 @@ const Skills = () => {
                                 alt={skill.name}
                                 className="w-20 h-20 object-contain mb-4"
                             />
-                            <p className="text-white text-base font-medium text-center">{skill.name}</p>
+                            <p className="text-card-foreground text-base font-medium text-center">{skill.name}</p>
                         </div>
                     );
                 })}

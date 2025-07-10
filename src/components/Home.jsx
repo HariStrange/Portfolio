@@ -29,11 +29,11 @@ const Home = () => {
   ];
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-accent/20 overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"
+          className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             rotate: [0, 180, 360],
@@ -45,7 +45,7 @@ const Home = () => {
           }}
         />
         <motion.div
-          className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"
+          className="absolute -bottom-40 -left-40 w-80 h-80 bg-muted/50 rounded-full blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             rotate: [360, 180, 0],
@@ -74,7 +74,7 @@ const Home = () => {
               transition={{ delay: 0.2 }}
             >
               <p className="text-muted-foreground text-lg">Hello, I'm</p>
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-bold text-foreground">
                 Hariharan N
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground font-medium">
@@ -117,7 +117,7 @@ const Home = () => {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
                 asChild
               >
                 <a
@@ -137,7 +137,7 @@ const Home = () => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-accent hover:bg-accent/80 transition-colors"
+                    className="p-3 rounded-full bg-secondary hover:bg-secondary/80 transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0, scale: 0 }}
@@ -161,13 +161,13 @@ const Home = () => {
             <div className="relative w-80 h-80 md:w-96 md:h-96">
               {/* Animated Rings */}
               <motion.div
-                className="absolute inset-0 rounded-full border-4 border-blue-500/30"
+                className="absolute inset-0 rounded-full border-4 border-primary/20"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 style={{ borderStyle: "dashed" }}
               />
               <motion.div
-                className="absolute inset-4 rounded-full border-2 border-purple-500/30"
+                className="absolute inset-4 rounded-full border-2 border-muted-foreground/20"
                 animate={{ rotate: -360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                 style={{ borderStyle: "dashed" }}
@@ -188,7 +188,7 @@ const Home = () => {
 
               {/* Floating Elements */}
               <motion.div
-                className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full"
+                className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full"
                 animate={{
                   y: [0, -10, 0],
                 }}
@@ -199,7 +199,7 @@ const Home = () => {
                 }}
               />
               <motion.div
-                className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-500 rounded-full"
+                className="absolute -bottom-4 -left-4 w-6 h-6 bg-secondary rounded-full"
                 animate={{
                   y: [0, 10, 0],
                 }}

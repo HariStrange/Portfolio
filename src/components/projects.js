@@ -67,8 +67,8 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="bg-gradient-to-br from-[#032442] via-[#032442] to-[#1d667a] py-16 px-4 min-h-screen">
-      <h1 className="text-4xl font-bold text-center text-white mb-12">
+    <section className="bg-background py-16 px-4 min-h-screen">
+      <h1 className="text-4xl font-bold text-center text-foreground mb-12">
         My Projects
       </h1>
       <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
@@ -78,7 +78,7 @@ const Projects = () => {
             href={project.projectUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden shadow-lg transform transition-all hover:-translate-y-2 hover:shadow-2xl"
+            className="relative bg-card border border-border rounded-2xl overflow-hidden shadow-lg transform transition-all hover:-translate-y-2 hover:shadow-2xl"
           >
             <div className="relative h-48 overflow-hidden">
               <img
@@ -90,7 +90,7 @@ const Projects = () => {
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
               />
             </div>
-            <div className="p-6 text-white">
+            <div className="p-6 text-card-foreground">
               <h2
                 className="text-xl font-semibold mb-2"
                 data-aos="fade-up"
@@ -99,7 +99,7 @@ const Projects = () => {
                 {project.title}
               </h2>
               <p
-                className="text-sm text-gray-300 mb-4"
+                className="text-sm text-muted-foreground mb-4"
                 data-aos="fade-up"
                 data-aos-anchor-placement="center-bottom"
               >
@@ -111,14 +111,14 @@ const Projects = () => {
                     key={index}
                     data-aos="fade-up"
                     data-aos-anchor-placement="center-bottom"
-                    className="bg-white/20 text-sm text-white px-2 py-1 rounded-full backdrop-blur-sm"
+                    className="bg-secondary text-sm text-secondary-foreground px-2 py-1 rounded-full"
                   >
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
-            <div className="absolute inset-0 bg-black/70 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center text-white font-medium text-center text-sm p-4">
+            <div className="absolute inset-0 bg-primary/90 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center text-primary-foreground font-medium text-center text-sm p-4">
               Click to Visit 🚀
             </div>
           </a>
