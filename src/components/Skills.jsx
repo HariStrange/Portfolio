@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
-import { Badge } from "./ui/badge";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -43,14 +42,8 @@ const skillCategories = [
     title: "Tools & DevOps",
     skills: [
       { name: "Git", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png", level: 90 },
-      { name: "GitHub", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png", level: 85 },
-      { name: "JWT", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png", level: 80 },
-      { name: "REST APIs", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png", level: 85 },
-      { name: "AOS", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png", level: 75 },
-      { name: "Postman", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png", level: 80 },
-      { name: "Camunda BPMN", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png", level: 70 },
-      { name: "Nginx", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png", level: 65 },
-      { name: "Docker", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png", level: 70 }
+      { name: "Docker", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png", level: 70 },
+      { name: "Nginx", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png", level: 65 }
     ]
   }
 ];
@@ -87,7 +80,7 @@ const Skills = () => {
               className={`px-6 py-3 rounded-full font-medium transition-all ${
                 activeCategory === index
                   ? "bg-primary text-primary-foreground shadow-lg"
-                  : "bg-card hover:bg-card/80 text-card-foreground border border-border"
+                  : "bg-secondary hover:bg-secondary/80 text-secondary-foreground"
               }`}
               onClick={() => setActiveCategory(index)}
               whileHover={{ scale: 1.05 }}
@@ -125,18 +118,13 @@ const Skills = () => {
                     </div>
                     <div className="flex-1">
                       <h3 className="font-semibold text-foreground">{skill.name}</h3>
-                      <div className="flex items-center justify-between mt-2">
-                        <div className="w-full bg-accent/30 rounded-full h-2">
-                          <motion.div
-                            className="bg-primary h-2 rounded-full"
-                            initial={{ width: 0 }}
-                            animate={{ width: `${skill.level}%` }}
-                            transition={{ delay: index * 0.1 + 0.5, duration: 1 }}
-                          />
-                        </div>
-                        <Badge variant="outline" className="ml-2 text-xs">
-                          {skill.level}%
-                        </Badge>
+                      <div className="w-full bg-accent/30 rounded-full h-2 mt-2">
+                        <motion.div
+                          className="bg-primary h-2 rounded-full"
+                          initial={{ width: 0 }}
+                          animate={{ width: `${skill.level}%` }}
+                          transition={{ delay: index * 0.1 + 0.5, duration: 1 }}
+                        />
                       </div>
                     </div>
                   </div>
@@ -144,33 +132,6 @@ const Skills = () => {
               </Card>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Skills Summary */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-primary">3+</h3>
-              <p className="text-muted-foreground">Languages</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-primary">4+</h3>
-              <p className="text-muted-foreground">Frontend Tech</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-primary">3+</h3>
-              <p className="text-muted-foreground">Backend Tech</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-primary">9+</h3>
-              <p className="text-muted-foreground">Tools & DevOps</p>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>
