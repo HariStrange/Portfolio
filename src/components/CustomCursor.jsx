@@ -5,45 +5,19 @@ const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
-  const [cursorVariant, setCursorVariant] = useState('default');
-  const [trail, setTrail] = useState([]);
 
   useEffect(() => {
     const updateMousePosition = (e) => {
-      const newPosition = { x: e.clientX, y: e.clientY };
-      setMousePosition(newPosition);
-      
-      // Update trail
-      setTrail(prevTrail => {
-        const newTrail = [newPosition, ...prevTrail.slice(0, 8)];
-        return newTrail;
-      });
+      setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    const handleMouseEnter = (e) => {
-      setIsHovering(true);
-      const element = e.target;
-      
-      // Check for specific elements and set cursor variant
-      if (element.tagName === 'A' || element.tagName === 'BUTTON' || element.getAttribute('role') === 'button') {
-        setCursorVariant('button');
-      } else if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-        setCursorVariant('input');
-      } else {
-        setCursorVariant('hover');
-      }
-    };
-
-    const handleMouseLeave = () => {
-      setIsHovering(false);
-      setCursorVariant('default');
-    };
-
+    const handleMouseEnter = () => setIsHovering(true);
+    const handleMouseLeave = () => setIsHovering(false);
     const handleMouseDown = () => setIsClicking(true);
     const handleMouseUp = () => setIsClicking(false);
 
     // Add event listeners for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, [role="button"], input, textarea, select, .cursor-pointer');
+    const interactiveElements = document.querySelectorAll('a, button, [role="button"], input, textarea, select');
     
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', handleMouseEnter);
@@ -65,136 +39,54 @@ const CustomCursor = () => {
     };
   }, []);
 
-  const getCursorSize = () => {
-    switch (cursorVariant) {
-      case 'button': return { main: 8, ring: 40 };
-      case 'input': return { main: 2, ring: 20 };
-      case 'hover': return { main: 6, ring: 30 };
-      default: return { main: 4, ring: 24 };
-    }
-  };
-
-  const getCursorColor = () => {
-    switch (cursorVariant) {
-      case 'button': return 'bg-blue-500';
-      case 'input': return 'bg-green-500';
-      case 'hover': return 'bg-purple-500';
-      default: return 'bg-primary';
-    }
-  };
-
-  const sizes = getCursorSize();
-  const colorClass = getCursorColor();
-
   return (
     <>
-      {/* Trail Effect */}
-      {trail.map((position, index) => (
-        <motion.div
-          key={index}
-          className={`fixed top-0 left-0 pointer-events-none z-[10000] rounded-full ${colorClass}`}
-          style={{
-            width: Math.max(2, sizes.main - index),
-            height: Math.max(2, sizes.main - index),
-            opacity: Math.max(0.1, 0.8 - index * 0.1),
-          }}
-          animate={{
-            x: position.x - (Math.max(2, sizes.main - index) / 2),
-            y: position.y - (Math.max(2, sizes.main - index) / 2),
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 1000,
-            damping: 50,
-            mass: 0.1,
-          }}
-        />
-      ))}
-
       {/* Main cursor dot */}
       <motion.div
-        className={`fixed top-0 left-0 ${colorClass} rounded-full pointer-events-none z-[10001] mix-blend-difference`}
-        style={{
-          width: sizes.main,
-          height: sizes.main,
-        }}
+        className="fixed top-0 left-0 w-3 h-3 bg-primary rounded-full pointer-events-none z-[10000] mix-blend-difference"
         animate={{
-          x: mousePosition.x - sizes.main / 2,
-          y: mousePosition.y - sizes.main / 2,
-          scale: isClicking ? 0.8 : 1,
+          x: mousePosition.x - 6,
+          y: mousePosition.y - 6,
+          scale: isClicking ? 0.8 : isHovering ? 1.5 : 1,
         }}
         transition={{
           type: "spring",
           stiffness: 500,
           damping: 28,
-          mass: 0.5,
         }}
       />
       
       {/* Outer ring */}
       <motion.div
-        className={`fixed top-0 left-0 border-2 border-primary/40 rounded-full pointer-events-none z-[10000]`}
-        style={{
-          width: sizes.ring,
-          height: sizes.ring,
-        }}
+        className="fixed top-0 left-0 w-8 h-8 border-2 border-primary/30 rounded-full pointer-events-none z-[10000]"
         animate={{
-          x: mousePosition.x - sizes.ring / 2,
-          y: mousePosition.y - sizes.ring / 2,
-          scale: isClicking ? 0.8 : isHovering ? 1.5 : 1,
-          opacity: isHovering ? 0.8 : 0.4,
+          x: mousePosition.x - 16,
+          y: mousePosition.y - 16,
+          scale: isClicking ? 0.8 : isHovering ? 2 : 1,
+          opacity: isHovering ? 0.8 : 0.5,
         }}
         transition={{
           type: "spring",
           stiffness: 150,
           damping: 15,
-          mass: 0.1,
         }}
       />
       
-      {/* Pulse effect for special interactions */}
-      {cursorVariant === 'button' && (
-        <motion.div
-          className="fixed top-0 left-0 border border-blue-500/30 rounded-full pointer-events-none z-[9999]"
-          style={{
-            width: sizes.ring + 20,
-            height: sizes.ring + 20,
-          }}
-          animate={{
-            x: mousePosition.x - (sizes.ring + 20) / 2,
-            y: mousePosition.y - (sizes.ring + 20) / 2,
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.1, 0.3],
-          }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      )}
-
-      {/* Magnetic effect for buttons */}
-      {cursorVariant === 'button' && (
-        <motion.div
-          className="fixed top-0 left-0 bg-blue-500/20 rounded-full pointer-events-none z-[9998] blur-sm"
-          style={{
-            width: sizes.ring * 2,
-            height: sizes.ring * 2,
-          }}
-          animate={{
-            x: mousePosition.x - sizes.ring,
-            y: mousePosition.y - sizes.ring,
-            scale: [0.8, 1.2, 0.8],
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-            mass: 0.2,
-          }}
-        />
-      )}
+      {/* Trailing effect */}
+      <motion.div
+        className="fixed top-0 left-0 w-12 h-12 border border-primary/20 rounded-full pointer-events-none z-[9999]"
+        animate={{
+          x: mousePosition.x - 24,
+          y: mousePosition.y - 24,
+          scale: isHovering ? 1.5 : 1,
+          opacity: isHovering ? 0.3 : 0.2,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 20,
+        }}
+      />
     </>
   );
 };

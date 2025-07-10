@@ -1,13 +1,17 @@
 import React from "react";
 import Header from "./Header.jsx";
-import Projects from "./Projects.jsx";
+import Projects from "./projects";
 import Home from "./Home.jsx";
 import AboutUs from "./aboutus";
 import Certificates from "./Certificates.jsx";
-import Experience from "./Experience.jsx";
+import Experience from "./experience";
 import Skills from "./Skills.jsx";
 import Contact from "./Contact.jsx";
 import Footer from "./Footer.jsx";
+
+// Import React and necessary components
+
+// Import your components here
 
 const Main = () => {
   return (
