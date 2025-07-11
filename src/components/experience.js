@@ -1,9 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, MapPin, ExternalLink, Code, Users, Award, Briefcase } from "lucide-react";
+import { Calendar, MapPin, Code, Users, Award, Briefcase } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
 
 const experiences = [
   {
