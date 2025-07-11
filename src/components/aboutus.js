@@ -27,7 +27,7 @@ const AboutUs = () => {
       caption: "Development Environment",
     },
     {
-      id: 3,
+      id: 4,
       url: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1752150228/4_aihj3k.jpg",
       alt: "Conference presentation",
       caption: "Tech Conference",
