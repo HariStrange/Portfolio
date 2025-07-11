@@ -75,34 +75,25 @@ html {
 }
 
 /* Professional Swiper Styles */
-.professional-swiper {
+.about-swiper {
   padding: 20px 0 60px 0;
   width: 100%;
   overflow: hidden;
 }
 
-.professional-swiper .swiper-slide {
+.about-swiper .swiper-slide {
   width: 100%;
-  max-width: 300px;
+  max-width: 320px;
   height: auto;
 }
 
-.swiper-slide-custom {
-  transition: all 0.3s ease;
-  width: 100% !important;
-}
-
-.professional-swiper .swiper-slide-active {
-  transform: scale(1.05);
-}
-
-.professional-swiper .swiper-pagination {
+.about-swiper .swiper-pagination {
   bottom: 10px;
   position: relative;
   margin-top: 20px;
 }
 
-.professional-swiper .swiper-pagination-bullet {
+.about-swiper .swiper-pagination-bullet {
   background: hsl(var(--primary));
   opacity: 0.5;
   width: 12px;
@@ -110,98 +101,40 @@ html {
   margin: 0 4px;
 }
 
-.professional-swiper .swiper-pagination-bullet-active {
+.about-swiper .swiper-pagination-bullet-active {
   opacity: 1;
   transform: scale(1.2);
 }
 
-/* Navigation buttons styling */
-.professional-swiper .swiper-button-next,
-.professional-swiper .swiper-button-prev {
-  color: hsl(var(--primary));
-  background: hsl(var(--background) / 0.8);
-  backdrop-filter: blur(10px);
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  margin-top: -22px;
-  border: 2px solid hsl(var(--border));
-  transition: all 0.3s ease;
-}
-
-.professional-swiper .swiper-button-next:hover,
-.professional-swiper .swiper-button-prev:hover {
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
-  transform: scale(1.1);
-}
-
-.professional-swiper .swiper-button-next::after,
-.professional-swiper .swiper-button-prev::after {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/* Swiper 3D Effect Enhancements */
-.professional-swiper .swiper-slide-shadow-left,
-.professional-swiper .swiper-slide-shadow-right {
-  background-image: none;
-}
-
-.professional-swiper .swiper-slide {
-  border-radius: 12px;
-  overflow: hidden;
-}
-
 /* Mobile and Tablet Swiper Optimizations */
 @media (max-width: 768px) {
-  .professional-swiper .swiper-slide {
+  .about-swiper .swiper-slide {
     width: 100% !important;
-    max-width: 100%;
+    max-width: 280px;
     height: auto;
   }
   
-  .professional-swiper {
+  .about-swiper {
     padding: 10px 0 50px 0;
   }
-  
-  .professional-swiper .swiper-slide-active {
-    transform: scale(1);
-  }
-  
-  .professional-swiper .swiper-pagination {
+
+  .about-swiper .swiper-pagination {
     margin-top: 15px;
   }
 }
 
 /* Tablet specific optimizations */
 @media (min-width: 640px) and (max-width: 1024px) {
-  .professional-swiper .swiper-slide {
+  .about-swiper .swiper-slide {
     width: 100% !important;
-    max-width: 400px;
+    max-width: 300px;
   }
   
-  .professional-swiper {
+  .about-swiper {
     padding: 15px 0 55px 0;
   }
 }
 
-/* Ensure proper container sizing */
-.professional-swiper .swiper-wrapper {
-  align-items: center;
-}
-
-.professional-swiper .swiper-container {
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Fix for mobile touch issues */
-@media (max-width: 768px) {
-  .professional-swiper {
-    touch-action: pan-y pinch-zoom;
-  }
-}
 
 /* Line clamp utilities */
 .line-clamp-2 {

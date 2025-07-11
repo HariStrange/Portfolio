@@ -65,7 +65,7 @@ const Header = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${
         isScrolled
-          ? "bg-background/70 backdrop-blur-xl shadow-2xl border-b border-border/30 py-2 mx-4 mt-4 rounded-2xl"
+          ? "bg-background/80 backdrop-blur-xl shadow-2xl border border-border/30 py-2 mx-4 mt-2 rounded-2xl"
           : "bg-transparent backdrop-blur-sm py-4"
       }`}
       style={{ 
@@ -102,7 +102,7 @@ const Header = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>{item.label}</span>
+              {item.label}
             </motion.a>
           ))}
           

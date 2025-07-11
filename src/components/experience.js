@@ -11,22 +11,21 @@ const experiences = [
     type: "work",
     title: "Full Stack Developer",
     company: "Sholas Technologies Private Limited",
-    location: "Teacher's Colony Erode - 638011",
+    location: "Erode, Tamil Nadu",
     duration: "Oct 2024 - Present",
     status: "Current Position",
-    description: "Leading full-stack development projects with focus on AI-powered solutions and modern web applications.",
+    description: "Leading full-stack development of AI-powered solutions and scalable web applications.",
     responsibilities: [
-      "Developing AI-powered document intelligence platform (Papex)",
-      "Building scalable web applications using Spring Boot and React.js",
-      "Implementing OCR and machine learning solutions",
+      "Developing AI document intelligence platform (Papex)",
+      "Building scalable applications with Spring Boot & React.js",
       "Leading development team and code reviews",
-      "Database design and optimization with PostgreSQL"
+      "Database optimization with PostgreSQL"
     ],
     technologies: ["Spring Boot", "React.js", "PostgreSQL", "AI/ML", "OCR", "Node.js"],
     achievements: [
-      "Successfully delivered Papex - AI document processing platform",
+      "Delivered Papex - AI document processing platform",
       "Improved application performance by 40%",
-      "Led team of 5 developers on multiple projects"
+      "Led team of 5 developers"
     ],
     image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1745030911/WhatsApp_Image_2025-04-17_at_17.21.20_3ba0f6d1_p5owal.png",
     companyUrl: "#"
@@ -39,25 +38,23 @@ const experiences = [
     location: "Online Internship",
     duration: "2 Months",
     status: "Completed",
-    description: "Intensive web development internship focusing on full-stack development and practical project implementation.",
+    description: "Intensive web development training with hands-on project implementation.",
     responsibilities: [
       "Learned modern web development technologies",
-      "Built full-stack web applications from scratch",
+      "Built full-stack applications from scratch",
       "Implemented responsive design principles",
-      "Worked with databases and API integration",
-      "Collaborated with remote development team"
+      "Worked with databases and API integration"
     ],
     technologies: ["HTML", "CSS", "JavaScript", "React.js", "Node.js", "Express.js", "MongoDB"],
     achievements: [
-      "Successfully completed Stack Overflow clone project",
-      "Implemented user authentication and authorization",
-      "Built real-time question and answer functionality",
-      "Achieved 95% completion rate in all assignments"
+      "Built Stack Overflow clone with full functionality",
+      "Achieved 95% completion rate",
+      "Implemented real-time Q&A system"
     ],
     projectHighlight: {
       name: "Stack Overflow Clone",
-      description: "Full-featured Q&A platform with user authentication, voting system, and real-time updates",
-      features: ["User registration/login", "Question posting", "Answer system", "Voting mechanism", "Search functionality"]
+      description: "Full-featured Q&A platform with authentication and voting system",
+      features: ["User authentication", "Question posting", "Answer system", "Voting mechanism"]
     },
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop",
     companyUrl: "https://nullclass.com"
@@ -65,25 +62,23 @@ const experiences = [
   {
     id: 3,
     type: "education",
-    title: "Full Stack Development - CCBP 4.0 Intensive Program",
-    company: "NxtWave Disruptive Technologies Pvt. Ltd.",
-    location: "Online | HQ: Manikonda, Hyderabad - 500032",
+    title: "Full Stack Development - CCBP 4.0",
+    company: "NxtWave Disruptive Technologies",
+    location: "Online Program",
     duration: "Jan 2023 - Present",
     status: "In Progress",
-    description: "Comprehensive full-stack development program covering modern web technologies and industry best practices.",
+    description: "Comprehensive full-stack development program with industry-standard practices.",
     responsibilities: [
       "Mastering React.js and modern JavaScript",
-      "Backend development with Node.js and Express.js",
-      "Database management and SQL optimization",
-      "Building responsive and accessible web applications",
-      "Learning industry-standard development practices"
+      "Backend development with Node.js",
+      "Database management and optimization",
+      "Building responsive web applications"
     ],
-    technologies: ["React.js", "JavaScript", "Node.js", "Express.js", "SQLite", "HTML", "CSS", "Bootstrap"],
+    technologies: ["React.js", "JavaScript", "Node.js", "Express.js", "SQLite", "Bootstrap"],
     achievements: [
       "Completed 15+ hands-on projects",
-      "Built Jobby App - Job searching platform",
-      "Developed Nxt Watch - Video streaming platform",
-      "Maintained 90%+ assignment completion rate"
+      "Built Jobby App & Nxt Watch platforms",
+      "Maintained 90%+ completion rate"
     ],
     image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1747633529/nxt_wave_k1zi3d.png",
     companyUrl: "https://www.ccbp.in"
@@ -134,7 +129,7 @@ const Experience = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="space-y-8">
             {experiences.map((exp, index) => (
               <motion.div
@@ -145,7 +140,7 @@ const Experience = () => {
                 transition={{ delay: index * 0.2 }}
                 className="group"
               >
-                <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-xl transition-all duration-500 group-hover:border-primary/20">
+                <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-xl transition-all duration-500">
                   <CardHeader className="pb-4">
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                       <div className="flex items-start space-x-4">
@@ -153,7 +148,7 @@ const Experience = () => {
                           <img
                             src={exp.image}
                             alt={exp.company}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                            className="w-full h-full object-cover"
                           />
                         </div>
                         <div className="flex-1">
@@ -165,7 +160,7 @@ const Experience = () => {
                               {exp.status}
                             </Badge>
                           </div>
-                          <CardTitle className="text-xl md:text-2xl text-foreground group-hover:text-primary transition-colors">
+                          <CardTitle className="text-xl md:text-2xl text-foreground">
                             {exp.title}
                           </CardTitle>
                           <p className="text-lg font-semibold text-muted-foreground mt-1">
@@ -183,17 +178,6 @@ const Experience = () => {
                           <MapPin className="w-4 h-4" />
                           <span>{exp.location}</span>
                         </div>
-                        {exp.companyUrl && (
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            className="h-auto p-0 text-primary hover:text-primary/80"
-                            onClick={() => window.open(exp.companyUrl, '_blank')}
-                          >
-                            <ExternalLink className="w-4 h-4 mr-1" />
-                            Visit Company
-                          </Button>
-                        )}
                       </div>
                     </div>
                   </CardHeader>
@@ -203,64 +187,63 @@ const Experience = () => {
                       {exp.description}
                     </p>
 
-                    {/* Technologies */}
-                    <div>
-                      <h4 className="font-semibold mb-3 text-foreground">Technologies & Tools:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech) => (
-                          <Badge key={tech} variant="secondary" className="px-3 py-1">
-                            {tech}
-                          </Badge>
-                        ))}
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {/* Technologies */}
+                      <div>
+                        <h4 className="font-semibold mb-3 text-foreground">Technologies:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {exp.technologies.map((tech) => (
+                            <Badge key={tech} variant="secondary" className="px-3 py-1">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Key Responsibilities */}
-                    <div>
-                      <h4 className="font-semibold mb-3 text-foreground">Key Responsibilities:</h4>
-                      <ul className="space-y-2">
-                        {exp.responsibilities.map((responsibility, idx) => (
-                          <li key={idx} className="flex items-start space-x-2 text-muted-foreground">
-                            <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                            <span>{responsibility}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      {/* Key Responsibilities */}
+                      <div>
+                        <h4 className="font-semibold mb-3 text-foreground">Key Responsibilities:</h4>
+                        <ul className="space-y-1">
+                          {exp.responsibilities.map((responsibility, idx) => (
+                            <li key={idx} className="flex items-start space-x-2 text-sm text-muted-foreground">
+                              <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                              <span>{responsibility}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
 
                     {/* Achievements */}
                     <div>
                       <h4 className="font-semibold mb-3 text-foreground">Key Achievements:</h4>
-                      <ul className="space-y-2">
+                      <div className="grid md:grid-cols-3 gap-3">
                         {exp.achievements.map((achievement, idx) => (
-                          <li key={idx} className="flex items-start space-x-2 text-muted-foreground">
+                          <div key={idx} className="flex items-start space-x-2 bg-accent/20 rounded-lg p-3">
                             <Award className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                            <span>{achievement}</span>
-                          </li>
+                            <span className="text-sm text-muted-foreground">{achievement}</span>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     </div>
 
-                    {/* Project Highlight for Internship */}
+                    {/* Project Highlight */}
                     {exp.projectHighlight && (
                       <div className="bg-accent/30 rounded-lg p-4 border border-border/50">
                         <h4 className="font-semibold mb-2 text-foreground flex items-center">
                           <Code className="w-4 h-4 mr-2 text-primary" />
                           Featured Project: {exp.projectHighlight.name}
                         </h4>
-                        <p className="text-muted-foreground mb-3">
+                        <p className="text-muted-foreground mb-3 text-sm">
                           {exp.projectHighlight.description}
                         </p>
-                        <div>
-                          <h5 className="font-medium mb-2 text-foreground">Key Features:</h5>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                            {exp.projectHighlight.features.map((feature, idx) => (
-                              <div key={idx} className="flex items-center space-x-2 text-sm text-muted-foreground">
-                                <span className="w-1 h-1 bg-primary rounded-full" />
-                                <span>{feature}</span>
-                              </div>
-                            ))}
-                          </div>
+                        <div className="grid grid-cols-2 gap-2">
+                          {exp.projectHighlight.features.map((feature, idx) => (
+                            <div key={idx} className="flex items-center space-x-2 text-sm text-muted-foreground">
+                              <span className="w-1 h-1 bg-primary rounded-full" />
+                              <span>{feature}</span>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     )}
