@@ -53,10 +53,18 @@ const Header = () => {
 
   const handleNavClick = (href) => {
     setIsMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Small delay to allow menu to close first
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        const headerHeight = 80; // Account for fixed header
+        const elementPosition = element.offsetTop - headerHeight;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
   };
 
   return (

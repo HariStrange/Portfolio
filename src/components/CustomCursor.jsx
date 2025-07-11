@@ -7,8 +7,17 @@ const CustomCursor = () => {
   const [isClicking, setIsClicking] = useState(false);
 
   useEffect(() => {
+    let animationFrameId;
+    
     const updateMousePosition = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      // Use requestAnimationFrame for smoother updates
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      
+      animationFrameId = requestAnimationFrame(() => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      });
     };
 
     const handleMouseEnter = () => setIsHovering(true);
@@ -17,18 +26,22 @@ const CustomCursor = () => {
     const handleMouseUp = () => setIsClicking(false);
 
     // Add event listeners for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, [role="button"], input, textarea, select');
+    const interactiveElements = document.querySelectorAll('a, button, [role="button"], input, textarea, select, .swiper-slide');
     
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', handleMouseEnter);
       el.addEventListener('mouseleave', handleMouseLeave);
     });
 
-    window.addEventListener('mousemove', updateMousePosition);
-    window.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mouseup', handleMouseUp);
+    // Use passive listeners for better performance
+    window.addEventListener('mousemove', updateMousePosition, { passive: true });
+    window.addEventListener('mousedown', handleMouseDown, { passive: true });
+    window.addEventListener('mouseup', handleMouseUp, { passive: true });
 
     return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
       window.removeEventListener('mousemove', updateMousePosition);
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
@@ -51,8 +64,9 @@ const CustomCursor = () => {
         }}
         transition={{
           type: "spring",
-          stiffness: 500,
-          damping: 28,
+          stiffness: 800,
+          damping: 35,
+          mass: 0.5,
         }}
       />
       
@@ -67,8 +81,9 @@ const CustomCursor = () => {
         }}
         transition={{
           type: "spring",
-          stiffness: 150,
-          damping: 15,
+          stiffness: 400,
+          damping: 25,
+          mass: 0.8,
         }}
       />
       
@@ -83,8 +98,9 @@ const CustomCursor = () => {
         }}
         transition={{
           type: "spring",
-          stiffness: 100,
-          damping: 20,
+          stiffness: 200,
+          damping: 30,
+          mass: 1,
         }}
       />
     </>

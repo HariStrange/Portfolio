@@ -5,6 +5,21 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 
+// Import certificate images from assets
+import Cert1 from "../assets/Certificates/Git and CLI.jpg";
+import Cert2 from "../assets/Certificates/React js.jpg";
+import Cert3 from "../assets/Certificates/Javascript.jpg";
+import Cert4 from "../assets/Certificates/Database.jpg";
+import Cert5 from "../assets/Certificates/Python.jpg";
+import Cert6 from "../assets/Certificates/Node Js.jpg";
+import Cert7 from "../assets/Certificates/Responsive Website.jpg";
+import Cert8 from "../assets/Certificates/XPM fundaMendals.jpg";
+import Cert9 from "../assets/Certificates/Responsive Web Designing.jpg";
+import Cert10 from "../assets/Certificates/Static web design.jpg";
+import Cert11 from "../assets/Certificates/Dynamic web application.jpg";
+import Cert12 from "../assets/Certificates/AI Workshop Participation Certificate.png";
+import Cert13 from "../assets/Certificates/AI Project Completion.png";
+
 const certificates = [
   {
     id: 1,
@@ -12,7 +27,7 @@ const certificates = [
     issuer: "NxtWave Disruptive Technologies",
     date: "2023",
     description: "Comprehensive training on version control systems, command line interface operations, and collaborative development workflows using Git and GitHub.",
-    image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png",
+    image: Cert1,
     skills: ["Git", "GitHub", "CLI", "Version Control"],
     credentialUrl: "#"
   },
@@ -22,7 +37,7 @@ const certificates = [
     issuer: "NxtWave Disruptive Technologies",
     date: "2023",
     description: "Advanced React.js development covering components, hooks, state management, routing, and modern React patterns for building scalable web applications.",
-    image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526106/1174949_js_react_js_logo_react_react_native_icon_zwdzxb.png",
+    image: Cert2,
     skills: ["React.js", "JSX", "Hooks", "State Management"],
     credentialUrl: "#"
   },
@@ -32,7 +47,7 @@ const certificates = [
     issuer: "NxtWave Disruptive Technologies",
     date: "2023",
     description: "In-depth JavaScript programming covering ES6+ features, asynchronous programming, DOM manipulation, and modern JavaScript development practices.",
-    image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526317/icons8-javascript-480_afdeqc.png",
+    image: Cert3,
     skills: ["JavaScript", "ES6+", "Async/Await", "DOM"],
     credentialUrl: "#"
   },
@@ -42,7 +57,7 @@ const certificates = [
     issuer: "NxtWave Disruptive Technologies",
     date: "2023",
     description: "Database design, SQL queries, normalization, and database optimization techniques for efficient data management and retrieval.",
-    image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526643/SQLite_rlulf4.png",
+    image: Cert4,
     skills: ["SQL", "Database Design", "SQLite", "Data Modeling"],
     credentialUrl: "#"
   },
@@ -52,7 +67,7 @@ const certificates = [
     issuer: "NxtWave Disruptive Technologies",
     date: "2023",
     description: "Python programming fundamentals, data structures, algorithms, and application development using Python for various use cases.",
-    image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526106/html5-logo-31813_udxo3g.png",
+    image: Cert5,
     skills: ["Python", "Data Structures", "Algorithms", "OOP"],
     credentialUrl: "#"
   },
@@ -62,8 +77,78 @@ const certificates = [
     issuer: "NxtWave Disruptive Technologies",
     date: "2023",
     description: "Server-side development with Node.js, Express.js framework, API development, and backend architecture patterns.",
-    image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/1012818_code_development_logo_nodejs_icon_bfggzj.png",
+    image: Cert6,
     skills: ["Node.js", "Express.js", "REST APIs", "Backend"],
+    credentialUrl: "#"
+  },
+  {
+    id: 7,
+    title: "Responsive Web Design",
+    issuer: "NxtWave Disruptive Technologies",
+    date: "2023",
+    description: "Modern responsive web design techniques, CSS Grid, Flexbox, and mobile-first development approaches.",
+    image: Cert7,
+    skills: ["CSS", "Responsive Design", "Flexbox", "Grid"],
+    credentialUrl: "#"
+  },
+  {
+    id: 8,
+    title: "Programming Fundamentals",
+    issuer: "NxtWave Disruptive Technologies",
+    date: "2023",
+    description: "Core programming concepts, problem-solving techniques, and foundational skills for software development.",
+    image: Cert8,
+    skills: ["Programming", "Problem Solving", "Logic", "Algorithms"],
+    credentialUrl: "#"
+  },
+  {
+    id: 9,
+    title: "Advanced Responsive Design",
+    issuer: "NxtWave Disruptive Technologies",
+    date: "2023",
+    description: "Advanced responsive design patterns, CSS frameworks, and modern layout techniques for professional web development.",
+    image: Cert9,
+    skills: ["Advanced CSS", "Bootstrap", "Responsive", "UI/UX"],
+    credentialUrl: "#"
+  },
+  {
+    id: 10,
+    title: "Static Web Design",
+    issuer: "NxtWave Disruptive Technologies",
+    date: "2023",
+    description: "Static website development using HTML, CSS, and JavaScript with focus on performance and user experience.",
+    image: Cert10,
+    skills: ["HTML", "CSS", "JavaScript", "Static Sites"],
+    credentialUrl: "#"
+  },
+  {
+    id: 11,
+    title: "Dynamic Web Applications",
+    issuer: "NxtWave Disruptive Technologies",
+    date: "2023",
+    description: "Building dynamic web applications with interactive features, API integration, and modern web technologies.",
+    image: Cert11,
+    skills: ["Dynamic Web", "APIs", "JavaScript", "Web Apps"],
+    credentialUrl: "#"
+  },
+  {
+    id: 12,
+    title: "AI Workshop Participation",
+    issuer: "Industry Workshop",
+    date: "2024",
+    description: "Participated in comprehensive AI workshop covering machine learning fundamentals, neural networks, and practical AI applications.",
+    image: Cert12,
+    skills: ["AI", "Machine Learning", "Neural Networks", "Python"],
+    credentialUrl: "#"
+  },
+  {
+    id: 13,
+    title: "AI Project Completion",
+    issuer: "Industry Project",
+    date: "2024",
+    description: "Successfully completed AI project involving document processing, OCR integration, and machine learning model implementation.",
+    image: Cert13,
+    skills: ["AI Project", "OCR", "Document Processing", "ML Models"],
     credentialUrl: "#"
   }
 ];
@@ -94,7 +179,7 @@ const Certificates = () => {
             Certifications & Achievements
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Professional certifications and continuous learning journey in modern web technologies
+            Professional certifications and continuous learning journey in modern web technologies and AI
           </p>
         </motion.div>
 
@@ -108,18 +193,18 @@ const Certificates = () => {
               viewport={{ once: true }}
             >
               <Card className="overflow-hidden shadow-2xl bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-border/50">
-                <div className="relative h-64 bg-muted/20 flex items-center justify-center">
+                <div className="relative h-80 bg-muted/20 flex items-center justify-center p-4">
                   <motion.img
                     key={currentCert.id}
                     src={currentCert.image}
                     alt={currentCert.title}
-                    className="w-24 h-24 object-contain"
-                    initial={{ scale: 0, opacity: 0 }}
+                    className="w-full h-full object-contain rounded-lg shadow-lg"
+                    initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    transition={{ type: "spring", stiffness: 200 }}
+                    transition={{ type: "spring", stiffness: 200, duration: 0.6 }}
                   />
                   <div className="absolute top-4 right-4">
-                    <Badge variant="secondary">
+                    <Badge variant="secondary" className="bg-background/90">
                       <Award className="w-3 h-3 mr-1" />
                       Certified
                     </Badge>
@@ -133,7 +218,7 @@ const Certificates = () => {
                   variant="outline"
                   size="icon"
                   onClick={prevCertificate}
-                  className="rounded-full"
+                  className="rounded-full bg-background/80 backdrop-blur-sm hover:bg-background/90"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </Button>
@@ -141,7 +226,7 @@ const Certificates = () => {
                   variant="outline"
                   size="icon"
                   onClick={nextCertificate}
-                  className="rounded-full"
+                  className="rounded-full bg-background/80 backdrop-blur-sm hover:bg-background/90"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </Button>
@@ -152,7 +237,7 @@ const Certificates = () => {
                 {certificates.map((_, index) => (
                   <button
                     key={index}
-                    className={`h-2 rounded-full transition-all ${
+                    className={`h-2 rounded-full transition-all duration-300 ${
                       index === currentIndex ? "bg-primary w-8" : "bg-muted w-2"
                     }`}
                     onClick={() => setCurrentIndex(index)}
@@ -174,7 +259,7 @@ const Certificates = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.4 }}
                 >
                   <Card className="bg-card/50 backdrop-blur-sm border-border/50">
                     <CardHeader>
@@ -216,7 +301,7 @@ const Certificates = () => {
                           onClick={() => window.open(currentCert.credentialUrl, '_blank')}
                         >
                           <ExternalLink className="w-4 h-4 mr-2" />
-                          View Credential
+                          View Certificate
                         </Button>
                       </div>
                     </CardContent>

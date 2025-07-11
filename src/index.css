@@ -63,6 +63,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed header */
 }
 
 /* Custom cursor styles */
@@ -72,6 +73,30 @@ html {
 
 .cursor-none * {
   cursor: none !important;
+}
+
+/* Smooth scrolling optimization */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Performance optimizations for cursor */
+body {
+  will-change: auto;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-none,
+  .cursor-none * {
+    cursor: auto !important;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Professional Swiper Styles */
