@@ -220,7 +220,6 @@ const projects = [
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [selectedProject, setSelectedProject] = useState(null);
 
   const categories = [
     { id: "all", label: "All Projects", icon: <Code className="w-4 h-4" /> },
@@ -302,7 +301,6 @@ const Projects = () => {
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
                 className="group cursor-pointer"
-                onClick={() => setSelectedProject(project)}
               >
                 <Card className="h-full overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-2xl transition-all duration-500">
                   {/* Project Image */}
