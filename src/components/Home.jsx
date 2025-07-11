@@ -1,6 +1,16 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Download, MapPin, Phone, Code, Database, Server } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Download,
+  MapPin,
+  Phone,
+  Code,
+  Database,
+  Server,
+} from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -17,26 +27,34 @@ const Home = () => {
       icon: <Github className="w-5 h-5" />,
       href: "https://github.com/natarajhari",
       label: "GitHub",
-      color: "hover:bg-gray-900 hover:text-white"
+      color: "hover:bg-gray-900 hover:text-white",
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
       href: "https://linkedin.com/in/hariharan-natarajan",
       label: "LinkedIn",
-      color: "hover:bg-blue-600 hover:text-white"
+      color: "hover:bg-blue-600 hover:text-white",
     },
     {
       icon: <Mail className="w-5 h-5" />,
       href: "mailto:natarajhari1@gmail.com",
       label: "Email",
-      color: "hover:bg-red-500 hover:text-white"
-    }
+      color: "hover:bg-red-500 hover:text-white",
+    },
   ];
 
   const techStack = [
     { icon: <Code className="w-5 h-5" />, label: "Frontend", tech: "React.js" },
-    { icon: <Server className="w-5 h-5" />, label: "Backend", tech: "Spring Boot" },
-    { icon: <Database className="w-5 h-5" />, label: "Database", tech: "PostgreSQL" }
+    {
+      icon: <Server className="w-5 h-5" />,
+      label: "Backend",
+      tech: "Spring Boot",
+    },
+    {
+      icon: <Database className="w-5 h-5" />,
+      label: "Database",
+      tech: "PostgreSQL",
+    },
   ];
 
   return (
@@ -52,7 +70,7 @@ const Home = () => {
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
         />
         <motion.div
@@ -64,7 +82,7 @@ const Home = () => {
           transition={{
             duration: 25,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
         />
         <motion.div
@@ -76,7 +94,7 @@ const Home = () => {
           transition={{
             duration: 15,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         />
       </div>
@@ -135,9 +153,13 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              Passionate Full Stack Developer with expertise in building scalable web applications 
-              using Spring Boot, React.js, and PostgreSQL. Currently contributing to innovative 
-              projects at <span className="text-foreground font-semibold">Sholas Technologies</span>.
+              Passionate Full Stack Developer with expertise in building
+              scalable web applications using Spring Boot, React.js, and
+              PostgreSQL. Currently contributing to innovative projects at{" "}
+              <span className="text-foreground font-semibold">
+                Sholas Technologies
+              </span>
+              .
             </motion.p>
 
             {/* Tech Stack */}
@@ -148,12 +170,17 @@ const Home = () => {
               transition={{ delay: 0.7 }}
             >
               {techStack.map((item, index) => (
-                <Card key={index} className="bg-card/50 backdrop-blur-sm border-border/50">
+                <Card
+                  key={index}
+                  className="bg-card/50 backdrop-blur-sm border-border/50"
+                >
                   <CardContent className="p-4 text-center">
                     <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
                       {item.icon}
                     </div>
-                    <p className="text-xs text-muted-foreground">{item.label}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {item.label}
+                    </p>
                     <p className="text-sm font-semibold">{item.tech}</p>
                   </CardContent>
                 </Card>
@@ -212,7 +239,7 @@ const Home = () => {
             <div className="relative w-80 h-80 md:w-96 md:h-96">
               {/* Animated Rings */}
               <motion.div
-                className="absolute inset-0 rounded-full border-4 border-gradient-to-r from-white/20 to-blue-500/20"
+                className="absolute inset-0 rounded-full border-4 border-gradient-to-r from-white/20 to-blue-500"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 style={{ borderStyle: "dashed" }}
@@ -223,7 +250,7 @@ const Home = () => {
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                 style={{ borderStyle: "dashed" }}
               />
-              
+
               {/* Profile Image */}
               <motion.div
                 className="absolute inset-8 rounded-full overflow-hidden shadow-2xl ring-4 ring-background"
@@ -246,7 +273,7 @@ const Home = () => {
                 transition={{
                   duration: 2,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
               />
               <motion.div
@@ -257,7 +284,7 @@ const Home = () => {
                 transition={{
                   duration: 2.5,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
               />
               <motion.div
@@ -268,7 +295,7 @@ const Home = () => {
                 transition={{
                   duration: 3,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
               />
             </div>

@@ -1,16 +1,30 @@
 import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
-import { Code, Database, Server, Globe, Zap, Users, Award, Target } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Navigation,
+  Pagination,
+  Autoplay,
+  EffectCoverflow,
+} from "swiper/modules";
+import {
+  Code,
+  Database,
+  Server,
+  Globe,
+  Zap,
+  Users,
+  Award,
+  Target,
+} from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-coverflow';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
 
 const AboutUs = () => {
   const swiperRef = useRef(null);
@@ -21,62 +35,95 @@ const AboutUs = () => {
       id: 1,
       url: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744517909/IMG_20241105_142411_res6rq.jpg",
       alt: "Professional headshot",
-      caption: "Professional Profile"
+      caption: "Professional Profile",
     },
     {
       id: 2,
-      url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face",
+      url: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744517886/IMG_20231001_143914_468_ncgcun.webp",
       alt: "Workspace setup",
-      caption: "Development Environment"
-    },
-    {
-      id: 3,
-      url: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face",
-      alt: "Team collaboration",
-      caption: "Team Collaboration"
+      caption: "Development Environment",
     },
     {
       id: 4,
-      url: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop&crop=face",
+      url: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1752150228/4_aihj3k.jpg",
       alt: "Conference presentation",
-      caption: "Tech Conference"
+      caption: "Tech Conference",
     },
     {
+      id: 3,
+      url: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1752150228/5_kjizfb.jpg",
+      alt: "Team collaboration",
+      caption: "Team Collaboration",
+    },
+
+    {
       id: 5,
-      url: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop&crop=face",
+      url: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1752150228/3_lrhzua.jpg",
       alt: "Code review session",
-      caption: "Code Review"
-    }
+      caption: "Code Review",
+    },
   ];
 
   const skills = [
-    { icon: <Code className="w-5 h-5" />, title: "Frontend Development", desc: "React.js, JavaScript, Tailwind CSS" },
-    { icon: <Server className="w-5 h-5" />, title: "Backend Development", desc: "Spring Boot, Node.js, Express.js" },
-    { icon: <Database className="w-5 h-5" />, title: "Database Management", desc: "PostgreSQL, MySQL, SQLite" },
-    { icon: <Globe className="w-5 h-5" />, title: "Full Stack Solutions", desc: "End-to-end application development" }
+    {
+      icon: <Code className="w-5 h-5" />,
+      title: "Frontend Development",
+      desc: "React.js, JavaScript, Tailwind CSS",
+    },
+    {
+      icon: <Server className="w-5 h-5" />,
+      title: "Backend Development",
+      desc: "Spring Boot, Node.js, Express.js",
+    },
+    {
+      icon: <Database className="w-5 h-5" />,
+      title: "Database Management",
+      desc: "PostgreSQL, MySQL, SQLite",
+    },
+    {
+      icon: <Globe className="w-5 h-5" />,
+      title: "Full Stack Solutions",
+      desc: "End-to-end application development",
+    },
   ];
 
   const achievements = [
-    { icon: <Zap className="w-5 h-5" />, title: "AI Integration", desc: "OCR & ML-powered document processing" },
-    { icon: <Users className="w-5 h-5" />, title: "Team Leadership", desc: "Leading development teams effectively" },
-    { icon: <Award className="w-5 h-5" />, title: "Project Delivery", desc: "Consistent on-time project completion" },
-    { icon: <Target className="w-5 h-5" />, title: "Problem Solving", desc: "Complex technical challenge resolution" }
+    {
+      icon: <Zap className="w-5 h-5" />,
+      title: "AI Integration",
+      desc: "OCR & ML-powered document processing",
+    },
+    {
+      icon: <Users className="w-5 h-5" />,
+      title: "Team Leadership",
+      desc: "Leading development teams effectively",
+    },
+    {
+      icon: <Award className="w-5 h-5" />,
+      title: "Project Delivery",
+      desc: "Consistent on-time project completion",
+    },
+    {
+      icon: <Target className="w-5 h-5" />,
+      title: "Problem Solving",
+      desc: "Complex technical challenge resolution",
+    },
   ];
 
   useEffect(() => {
     // Custom swiper navigation for desktop
     const handleKeyDown = (e) => {
       if (swiperRef.current) {
-        if (e.key === 'ArrowLeft') {
+        if (e.key === "ArrowLeft") {
           swiperRef.current.swiper.slidePrev();
-        } else if (e.key === 'ArrowRight') {
+        } else if (e.key === "ArrowRight") {
           swiperRef.current.swiper.slideNext();
         }
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   return (
@@ -92,7 +139,8 @@ const AboutUs = () => {
             About Me
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Passionate Full Stack Developer with expertise in modern web technologies and AI integration
+            Passionate Full Stack Developer with expertise in modern web
+            technologies and AI integration
           </p>
         </motion.div>
 
@@ -117,18 +165,18 @@ const AboutUs = () => {
                   640: {
                     slidesPerView: 1,
                     spaceBetween: 20,
-                    effect: "slide"
+                    effect: "slide",
                   },
                   768: {
                     slidesPerView: "auto",
                     spaceBetween: 30,
-                    effect: "coverflow"
+                    effect: "coverflow",
                   },
                   1024: {
                     slidesPerView: "auto",
                     spaceBetween: 40,
-                    effect: "coverflow"
-                  }
+                    effect: "coverflow",
+                  },
                 }}
                 coverflowEffect={{
                   rotate: 50,
@@ -146,14 +194,17 @@ const AboutUs = () => {
                   dynamicBullets: true,
                 }}
                 navigation={{
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev',
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
                 }}
                 loop={true}
                 className="professional-swiper w-full"
               >
                 {galleryImages.map((image) => (
-                  <SwiperSlide key={image.id} className="swiper-slide-custom w-full">
+                  <SwiperSlide
+                    key={image.id}
+                    className="swiper-slide-custom w-full"
+                  >
                     <div className="relative group">
                       <img
                         src={image.url}
@@ -167,7 +218,7 @@ const AboutUs = () => {
                     </div>
                   </SwiperSlide>
                 ))}
-                
+
                 {/* Navigation buttons - hidden on mobile */}
                 <div className="swiper-button-prev hidden md:flex"></div>
                 <div className="swiper-button-next hidden md:flex"></div>
@@ -194,26 +245,42 @@ const AboutUs = () => {
 
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p className="text-lg">
-                  I'm a passionate <span className="text-foreground font-semibold">Full Stack Developer</span> with 
-                  expertise in building scalable, modern web applications. Currently contributing to innovative 
-                  projects at <span className="text-foreground font-semibold">Sholas Technologies</span>.
+                  I'm a passionate{" "}
+                  <span className="text-foreground font-semibold">
+                    Full Stack Developer
+                  </span>{" "}
+                  with expertise in building scalable, modern web applications.
+                  Currently contributing to innovative projects at{" "}
+                  <span className="text-foreground font-semibold">
+                    Sholas Technologies
+                  </span>
+                  .
                 </p>
-                
+
                 <p>
-                  My journey in software development spans across frontend frameworks like React.js, 
-                  backend technologies including Spring Boot and Node.js, and database management 
-                  with PostgreSQL and MySQL.
+                  My journey in software development spans across frontend
+                  frameworks like React.js, backend technologies including
+                  Spring Boot and Node.js, and database management with
+                  PostgreSQL and MySQL.
                 </p>
-                
+
                 <p>
-                  I specialize in creating seamless user experiences while architecting robust backend 
-                  systems. My recent work includes AI-powered document processing solutions and 
-                  real-time web applications.
+                  I specialize in creating seamless user experiences while
+                  architecting robust backend systems. My recent work includes
+                  AI-powered document processing solutions and real-time web
+                  applications.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-2 pt-4">
-                {["React.js", "Spring Boot", "PostgreSQL", "Node.js", "AI/ML", "Docker"].map((tech) => (
+                {[
+                  "React.js",
+                  "Spring Boot",
+                  "PostgreSQL",
+                  "Node.js",
+                  "AI/ML",
+                  "Docker",
+                ].map((tech) => (
                   <Badge key={tech} variant="outline" className="px-3 py-1">
                     {tech}
                   </Badge>
@@ -232,18 +299,27 @@ const AboutUs = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-foreground">Core Expertise</h3>
+            <h3 className="text-2xl font-bold mb-6 text-foreground">
+              Core Expertise
+            </h3>
             <div className="space-y-4">
               {skills.map((skill, index) => (
-                <Card key={index} className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-lg transition-all duration-300">
+                <Card
+                  key={index}
+                  className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-lg transition-all duration-300"
+                >
                   <CardContent className="p-4">
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                         {skill.icon}
                       </div>
                       <div>
-                        <h4 className="font-semibold text-foreground mb-1">{skill.title}</h4>
-                        <p className="text-sm text-muted-foreground">{skill.desc}</p>
+                        <h4 className="font-semibold text-foreground mb-1">
+                          {skill.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          {skill.desc}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -259,18 +335,27 @@ const AboutUs = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-foreground">Key Achievements</h3>
+            <h3 className="text-2xl font-bold mb-6 text-foreground">
+              Key Achievements
+            </h3>
             <div className="space-y-4">
               {achievements.map((achievement, index) => (
-                <Card key={index} className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-lg transition-all duration-300">
+                <Card
+                  key={index}
+                  className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-lg transition-all duration-300"
+                >
                   <CardContent className="p-4">
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-secondary/50 rounded-lg flex items-center justify-center text-secondary-foreground">
                         {achievement.icon}
                       </div>
                       <div>
-                        <h4 className="font-semibold text-foreground mb-1">{achievement.title}</h4>
-                        <p className="text-sm text-muted-foreground">{achievement.desc}</p>
+                        <h4 className="font-semibold text-foreground mb-1">
+                          {achievement.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          {achievement.desc}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
