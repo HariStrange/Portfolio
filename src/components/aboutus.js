@@ -1,8 +1,16 @@
-
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
-import { Code, Database, Server, Globe, Zap, Users, Award, Target } from "lucide-react";
+import {
+  Code,
+  Database,
+  Server,
+  Globe,
+  Zap,
+  Users,
+  Award,
+  Target,
+} from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 
@@ -24,25 +32,25 @@ const AboutUs = () => {
       id: 2,
       url: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744517886/IMG_20231001_143914_468_ncgcun.webp",
       alt: "Workspace setup",
-      caption: "Development Environment",
+      caption: "yercaud",
     },
     {
-      id: 4,
+      id: 3,
       url: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1752150228/2_bw8flr.jpg",
       alt: "Conference presentation",
-      caption: "Tech Conference",
+      caption: "Yercaud",
     },
     {
       id: 4,
       url: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1752150228/5_kjizfb.jpg",
       alt: "Team collaboration",
-      caption: "Team Collaboration",
+      caption: "Pondy",
     },
     {
       id: 5,
       url: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1752150228/3_lrhzua.jpg",
       alt: "Code review session",
-      caption: "Code Review",
+      caption: "Pondy",
     },
   ];
 
@@ -105,7 +113,8 @@ const AboutUs = () => {
             About Me
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Passionate Full Stack Developer with expertise in modern web technologies and AI integration
+            Passionate Full Stack Developer with expertise in modern web
+            technologies and AI integration
           </p>
         </motion.div>
 
@@ -220,13 +229,14 @@ const AboutUs = () => {
                 </Badge>
               </div>
 
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p className="text-lg">
+              <div className="space-y-4 text-muted-foreground text-[17px] leading-relaxed">
+                <p className="">
                   I'm a passionate{" "}
                   <span className="text-foreground font-semibold">
                     Full Stack Developer
                   </span>{" "}
-                  specializing in scalable web applications. Currently contributing to innovative AI-powered solutions at{" "}
+                  specializing in scalable web applications. Currently
+                  contributing to innovative AI-powered solutions at{" "}
                   <span className="text-foreground font-semibold">
                     Sholas Technologies
                   </span>
@@ -234,11 +244,15 @@ const AboutUs = () => {
                 </p>
 
                 <p>
-                  My expertise spans React.js, Spring Boot, and PostgreSQL, with a focus on creating seamless user experiences and robust backend architectures.
+                  My expertise spans React.js, Spring Boot, and PostgreSQL, with
+                  a focus on creating seamless user experiences and robust
+                  backend architectures.
                 </p>
 
                 <p>
-                  I specialize in AI integration, real-time applications, and modern web technologies that drive business growth and user engagement.
+                  I specialize in AI integration, real-time applications, and
+                  modern web technologies that drive business growth and user
+                  engagement.
                 </p>
               </div>
 
@@ -249,7 +263,7 @@ const AboutUs = () => {
                   "PostgreSQL",
                   "Node.js",
                   "AI/ML",
-                  "Docker",
+                  "Tailwind CSS",
                 ].map((tech) => (
                   <Badge key={tech} variant="outline" className="px-3 py-1">
                     {tech}
@@ -261,78 +275,80 @@ const AboutUs = () => {
         </div>
 
         {/* Skills & Achievements Grid */}
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Core Skills */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <h3 className="text-2xl font-bold mb-6 text-foreground">
-              Core Expertise
-            </h3>
-            <div className="space-y-4">
-              {skills.map((skill, index) => (
-                <Card
-                  key={index}
-                  className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-lg transition-all duration-300"
-                >
-                  <CardContent className="p-4">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                        {skill.icon}
+        <div className="mx-16">
+          <div className="grid md:grid-cols-2 gap-20">
+            {/* Core Skills */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <h3 className="text-2xl font-bold mb-6 text-foreground">
+                Core Expertise
+              </h3>
+              <div className="space-y-4">
+                {skills.map((skill, index) => (
+                  <Card
+                    key={index}
+                    className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-lg transition-all duration-300"
+                  >
+                    <CardContent className="p-4">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                          {skill.icon}
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-foreground mb-1">
+                            {skill.title}
+                          </h4>
+                          <p className="text-sm text-muted-foreground">
+                            {skill.desc}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-1">
-                          {skill.title}
-                        </h4>
-                        <p className="text-sm text-muted-foreground">
-                          {skill.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </motion.div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </motion.div>
 
-          {/* Key Achievements */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-          >
-            <h3 className="text-2xl font-bold mb-6 text-foreground">
-              Key Achievements
-            </h3>
-            <div className="space-y-4">
-              {achievements.map((achievement, index) => (
-                <Card
-                  key={index}
-                  className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-lg transition-all duration-300"
-                >
-                  <CardContent className="p-4">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-secondary/50 rounded-lg flex items-center justify-center text-secondary-foreground">
-                        {achievement.icon}
+            {/* Key Achievements */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <h3 className="text-2xl font-bold mb-6 text-foreground">
+                Key Achievements
+              </h3>
+              <div className="space-y-4">
+                {achievements.map((achievement, index) => (
+                  <Card
+                    key={index}
+                    className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-lg transition-all duration-300"
+                  >
+                    <CardContent className="p-4">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-secondary/50 rounded-lg flex items-center justify-center text-secondary-foreground">
+                          {achievement.icon}
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-foreground mb-1">
+                            {achievement.title}
+                          </h4>
+                          <p className="text-sm text-muted-foreground">
+                            {achievement.desc}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-1">
-                          {achievement.title}
-                        </h4>
-                        <p className="text-sm text-muted-foreground">
-                          {achievement.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </motion.div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

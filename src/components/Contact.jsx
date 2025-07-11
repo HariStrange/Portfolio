@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 
@@ -9,7 +16,7 @@ const Contact = () => {
     first_name: "",
     last_name: "",
     email: "",
-    message: ""
+    message: "",
   });
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -40,7 +47,7 @@ const Contact = () => {
 
     const body = JSON.stringify({
       access_key: "1aee5581-faa4-48c3-b1dc-83b922cc4ff6",
-      ...formData
+      ...formData,
     });
 
     try {
@@ -48,9 +55,9 @@ const Contact = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json"
+          Accept: "application/json",
         },
-        body
+        body,
       }).then((res) => res.json());
 
       if (res.success) {
@@ -78,20 +85,20 @@ const Contact = () => {
       icon: <Phone className="w-5 h-5" />,
       label: "Phone",
       value: "+91-8760370499",
-      href: "tel:+918760370499"
+      href: "tel:+918760370499",
     },
     {
       icon: <Mail className="w-5 h-5" />,
       label: "Email",
       value: "natarajhari1@gmail.com",
-      href: "mailto:natarajhari1@gmail.com"
+      href: "mailto:natarajhari1@gmail.com",
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       label: "Location",
       value: "Salem, Tamil Nadu",
-      href: "#"
-    }
+      href: "#",
+    },
   ];
 
   return (
@@ -107,7 +114,8 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Ready to collaborate on your next project? Let's discuss how we can work together to bring your ideas to life.
+            Ready to collaborate on your next project? Let's discuss how we can
+            work together to bring your ideas to life.
           </p>
         </motion.div>
 
@@ -124,11 +132,12 @@ const Contact = () => {
                 <CardHeader>
                   <CardTitle className="text-2xl">Let's Connect</CardTitle>
                   <p className="text-muted-foreground">
-                    I'm always interested in new opportunities and exciting projects. 
-                    Whether you have a question or just want to say hi, feel free to reach out!
+                    I'm always interested in new opportunities and exciting
+                    projects. Whether you have a question or just want to say
+                    hi, feel free to reach out!
                   </p>
                 </CardHeader>
-                <CardContent className="space-y-6">
+                <CardContent >
                   {contactInfo.map((info, index) => (
                     <motion.div
                       key={info.label}
@@ -206,7 +215,10 @@ const Contact = () => {
                   <form onSubmit={onSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <label htmlFor="first_name" className="text-sm font-medium">
+                        <label
+                          htmlFor="first_name"
+                          className="text-sm font-medium"
+                        >
                           First Name
                         </label>
                         <input
@@ -220,7 +232,10 @@ const Contact = () => {
                         />
                       </div>
                       <div className="space-y-2">
-                        <label htmlFor="last_name" className="text-sm font-medium">
+                        <label
+                          htmlFor="last_name"
+                          className="text-sm font-medium"
+                        >
                           Last Name
                         </label>
                         <input
@@ -255,8 +270,8 @@ const Contact = () => {
                       <textarea
                         id="message"
                         name="message"
-                        rows="6"
-                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none"
+                        rows="9"
+                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary transition-all"
                         value={formData.message}
                         onChange={handleChange}
                         required
@@ -311,13 +326,10 @@ const Contact = () => {
             </motion.div>
             <h3 className="text-xl font-semibold mb-2">Message Sent!</h3>
             <p className="text-muted-foreground mb-6">
-              Thank you for reaching out. I'll get back to you as soon as possible.
+              Thank you for reaching out. I'll get back to you as soon as
+              possible.
             </p>
-            <Button
-              onClick={() => setSuccess(false)}
-            >
-              Close
-            </Button>
+            <Button onClick={() => setSuccess(false)}>Close</Button>
           </motion.div>
         </motion.div>
       )}

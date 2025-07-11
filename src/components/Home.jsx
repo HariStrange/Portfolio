@@ -20,7 +20,7 @@ import "aos/dist/aos.css";
 
 const Home = () => {
   const { theme } = useTheme();
-  
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true, offset: 100 });
   }, []);
@@ -28,14 +28,15 @@ const Home = () => {
   const socialLinks = [
     {
       icon: <Github className="w-5 h-5" />,
-      href: "https://github.com/natarajhari",
+      href: "https://github.com/HariStrange",
       label: "GitHub",
-      color: "hover:bg-gray-900 hover:text-white dark:hover:bg-gray-100 dark:hover:text-gray-900",
+      color:
+        "hover:bg-gray-900 hover:text-white dark:hover:bg-gray-100 dark:hover:text-gray-900",
       hoverScale: 1.1,
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
-      href: "https://linkedin.com/in/hariharan-natarajan",
+      href: "https://www.linkedin.com/in/natarajhari/",
       label: "LinkedIn",
       color: "hover:bg-blue-600 hover:text-white",
       hoverScale: 1.1,
@@ -64,9 +65,10 @@ const Home = () => {
   ];
 
   // Theme-responsive blob colors
-  const blobColorClass = theme === 'dark' 
-    ? "bg-gradient-to-br from-white/10 to-white/5 border-white/20" 
-    : "bg-gradient-to-br from-blue-500/10 to-blue-600/5 border-blue-500/20";
+  const blobColorClass =
+    theme === "dark"
+      ? "bg-gradient-to-br from-white/10 to-white/5 border-white/20"
+      : "bg-gradient-to-br from-blue-500/10 to-blue-600/5 border-blue-500/20";
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden pt-20">
@@ -148,13 +150,13 @@ const Home = () => {
             <div className="relative w-80 h-80 md:w-96 md:h-96">
               {/* Animated Rings */}
               <motion.div
-                className="absolute inset-0 rounded-full border-4 border-gradient-to-r from-primary/30 to-primary/60"
+                className="absolute inset-0 rounded-full border-4 border-cyan-400 "
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 style={{ borderStyle: "dashed" }}
               />
               <motion.div
-                className="absolute inset-4 rounded-full border-2 border-gradient-to-r from-primary/60 to-primary/30"
+                className="absolute inset-4 rounded-full border-2 border-cyan-300 "
                 animate={{ rotate: -360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                 style={{ borderStyle: "dashed" }}
@@ -175,7 +177,7 @@ const Home = () => {
 
               {/* Floating Elements */}
               <motion.div
-                className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-primary to-primary/70 rounded-full shadow-lg border border-primary/30"
+                className="absolute -top-4 -right-4 w-8 h-8 bg-cyan-400 rounded-full shadow-lg "
                 animate={{
                   y: [0, -10, 0],
                 }}
@@ -186,7 +188,7 @@ const Home = () => {
                 }}
               />
               <motion.div
-                className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-br from-primary/70 to-primary rounded-full shadow-lg border border-primary/30"
+                className="absolute -bottom-4 -left-4 w-6 h-6 bg-cyan-400 rounded-full shadow-lg "
                 animate={{
                   y: [0, 10, 0],
                 }}
@@ -197,7 +199,18 @@ const Home = () => {
                 }}
               />
               <motion.div
-                className="absolute top-1/2 -left-6 w-4 h-4 bg-gradient-to-br from-primary to-primary/70 rounded-full shadow-lg border border-primary/30"
+                className="absolute top-1/2 -left-7 w-4 h-4 bg-cyan-400 rounded-full shadow-lg "
+                animate={{
+                  x: [0, -5, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              <motion.div
+                className="absolute top-1/2 -right-10 w-4 h-4 bg-cyan-400 rounded-full shadow-lg "
                 animate={{
                   x: [0, -5, 0],
                 }}
@@ -325,23 +338,20 @@ const Home = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`p-3 rounded-full bg-secondary/50 backdrop-blur-sm border border-border/50 transition-all duration-300 ${link.color} shadow-md hover:shadow-lg`}
-                    whileHover={{ 
-                      scale: link.hoverScale, 
+                    whileHover={{
+                      scale: link.hoverScale,
                       y: -3,
                       rotate: [0, -5, 5, 0],
                     }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ 
+                    transition={{
                       delay: 1 + index * 0.1,
-                      hover: { duration: 0.3 }
+                      hover: { duration: 0.3 },
                     }}
                   >
-                    <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                    >
+                    <motion.div transition={{ duration: 0.6 }}>
                       {link.icon}
                     </motion.div>
                   </motion.a>

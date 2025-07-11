@@ -13,21 +13,30 @@ const experiences = [
     location: "Erode, Tamil Nadu",
     duration: "Oct 2024 - Present",
     status: "Current Position",
-    description: "Leading full-stack development of AI-powered solutions and scalable web applications.",
+    description:
+      "Leading full-stack development of AI-powered solutions and scalable web applications.",
     responsibilities: [
       "Developing AI document intelligence platform (Papex)",
       "Building scalable applications with Spring Boot & React.js",
       "Leading development team and code reviews",
-      "Database optimization with PostgreSQL"
+      "Database optimization with PostgreSQL",
     ],
-    technologies: ["Spring Boot", "React.js", "PostgreSQL", "AI/ML", "OCR", "Node.js"],
+    technologies: [
+      "Spring Boot",
+      "React.js",
+      "PostgreSQL",
+      "AI/ML",
+      "OCR",
+      "Node.js",
+    ],
     achievements: [
       "Delivered Papex - AI document processing platform",
       "Improved application performance by 40%",
-      "Led team of 5 developers"
+      "Led team of 5 developers",
     ],
-    image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1745030911/WhatsApp_Image_2025-04-17_at_17.21.20_3ba0f6d1_p5owal.png",
-    companyUrl: "#"
+    image:
+      "https://res.cloudinary.com/dx5lg8mei/image/upload/v1745030911/WhatsApp_Image_2025-04-17_at_17.21.20_3ba0f6d1_p5owal.png",
+    companyUrl: "sholas.io",
   },
   {
     id: 2,
@@ -37,26 +46,42 @@ const experiences = [
     location: "Online Internship",
     duration: "2 Months",
     status: "Completed",
-    description: "Intensive web development training with hands-on project implementation.",
+    description:
+      "Intensive web development training with hands-on project implementation.",
     responsibilities: [
       "Learned modern web development technologies",
       "Built full-stack applications from scratch",
       "Implemented responsive design principles",
-      "Worked with databases and API integration"
+      "Worked with databases and API integration",
     ],
-    technologies: ["HTML", "CSS", "JavaScript", "React.js", "Node.js", "Express.js", "MongoDB"],
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
     achievements: [
       "Built Stack Overflow clone with full functionality",
       "Achieved 95% completion rate",
-      "Implemented real-time Q&A system"
+      "Implemented real-time Q&A system",
     ],
     projectHighlight: {
       name: "Stack Overflow Clone",
-      description: "Full-featured Q&A platform with authentication and voting system",
-      features: ["User authentication", "Question posting", "Answer system", "Voting mechanism"]
+      description:
+        "Full-featured Q&A platform with authentication and voting system",
+      features: [
+        "User authentication",
+        "Question posting",
+        "Answer system",
+        "Voting mechanism",
+      ],
     },
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop",
-    companyUrl: "https://nullclass.com"
+    image:
+      "https://media.licdn.com/dms/image/v2/C560BAQGCs07yzlcG9Q/company-logo_200_200/company-logo_200_200/0/1630646786601/nullclassdotcom_logo?e=2147483647&v=beta&t=HzWjQJIPj_5_S7_jDDEjZ2yeQpYkoZnMDpLs7cw1zqQ",
+    companyUrl: "https://www.nullclass.com/",
   },
   {
     id: 3,
@@ -66,22 +91,31 @@ const experiences = [
     location: "Online Program",
     duration: "Jan 2023 - Present",
     status: "In Progress",
-    description: "Comprehensive full-stack development program with industry-standard practices.",
+    description:
+      "Comprehensive full-stack development program with industry-standard practices.",
     responsibilities: [
       "Mastering React.js and modern JavaScript",
       "Backend development with Node.js",
       "Database management and optimization",
-      "Building responsive web applications"
+      "Building responsive web applications",
     ],
-    technologies: ["React.js", "JavaScript", "Node.js", "Express.js", "SQLite", "Bootstrap"],
+    technologies: [
+      "React.js",
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "SQLite",
+      "Bootstrap",
+    ],
     achievements: [
       "Completed 15+ hands-on projects",
       "Built Jobby App & Nxt Watch platforms",
-      "Maintained 90%+ completion rate"
+      "Maintained 90%+ completion rate",
     ],
-    image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1747633529/nxt_wave_k1zi3d.png",
-    companyUrl: "https://www.ccbp.in"
-  }
+    image:
+      "https://res.cloudinary.com/dx5lg8mei/image/upload/v1747633529/nxt_wave_k1zi3d.png",
+    companyUrl: "https://www.ccbp.in/",
+  },
 ];
 
 const Experience = () => {
@@ -124,7 +158,8 @@ const Experience = () => {
             Professional Experience
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            My journey in software development, from learning to leading innovative projects
+            My journey in software development, from learning to leading
+            innovative projects
           </p>
         </motion.div>
 
@@ -139,11 +174,11 @@ const Experience = () => {
                 transition={{ delay: index * 0.2 }}
                 className="group"
               >
-                <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-xl transition-all duration-500">
+                <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-xl transition-all duration-500 shadow-xl">
                   <CardHeader className="pb-4">
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                       <div className="flex items-start space-x-4">
-                        <div className="w-16 h-16 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+                        <div className="w-32 h-32 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
                           <img
                             src={exp.image}
                             alt={exp.company}
@@ -155,7 +190,9 @@ const Experience = () => {
                             <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                               {getTypeIcon(exp.type)}
                             </div>
-                            <Badge className={`border ${getStatusColor(exp.status)}`}>
+                            <Badge
+                              className={`border ${getStatusColor(exp.status)}`}
+                            >
                               {exp.status}
                             </Badge>
                           </div>
@@ -167,7 +204,7 @@ const Experience = () => {
                           </p>
                         </div>
                       </div>
-                      
+
                       <div className="flex flex-col items-start lg:items-end space-y-2 text-sm text-muted-foreground">
                         <div className="flex items-center space-x-2">
                           <Calendar className="w-4 h-4" />
@@ -189,10 +226,16 @@ const Experience = () => {
                     <div className="grid md:grid-cols-2 gap-6">
                       {/* Technologies */}
                       <div>
-                        <h4 className="font-semibold mb-3 text-foreground">Technologies:</h4>
+                        <h4 className="font-semibold mb-3 text-foreground">
+                          Technologies:
+                        </h4>
                         <div className="flex flex-wrap gap-2">
                           {exp.technologies.map((tech) => (
-                            <Badge key={tech} variant="secondary" className="px-3 py-1">
+                            <Badge
+                              key={tech}
+                              variant="secondary"
+                              className="px-3 py-1"
+                            >
                               {tech}
                             </Badge>
                           ))}
@@ -200,11 +243,16 @@ const Experience = () => {
                       </div>
 
                       {/* Key Responsibilities */}
-                      <div>
-                        <h4 className="font-semibold mb-3 text-foreground">Key Responsibilities:</h4>
+                      <div className="hidden md:block">
+                        <h4 className="font-semibold mb-3 text-foreground">
+                          Key Responsibilities:
+                        </h4>
                         <ul className="space-y-1">
                           {exp.responsibilities.map((responsibility, idx) => (
-                            <li key={idx} className="flex items-start space-x-2 text-sm text-muted-foreground">
+                            <li
+                              key={idx}
+                              className="flex items-start space-x-2 text-sm text-muted-foreground"
+                            >
                               <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
                               <span>{responsibility}</span>
                             </li>
@@ -215,19 +263,26 @@ const Experience = () => {
 
                     {/* Achievements */}
                     <div>
-                      <h4 className="font-semibold mb-3 text-foreground">Key Achievements:</h4>
-                      <div className="grid md:grid-cols-3 gap-3">
+                      <h4 className="font-semibold mb-3 text-foreground">
+                        Key Achievements:
+                      </h4>
+                      <div className="grid md:grid-cols-3 gap-0 md:gap-3">
                         {exp.achievements.map((achievement, idx) => (
-                          <div key={idx} className="flex items-start space-x-2 bg-accent/20 rounded-lg p-3">
+                          <div
+                            key={idx}
+                            className="flex items-start space-x-2 bg-accent/20 rounded-lg p-3"
+                          >
                             <Award className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                            <span className="text-sm text-muted-foreground">{achievement}</span>
+                            <span className="text-sm text-muted-foreground">
+                              {achievement}
+                            </span>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     {/* Project Highlight */}
-                    {exp.projectHighlight && (
+                    {/* {exp.projectHighlight && (
                       <div className="bg-accent/30 rounded-lg p-4 border border-border/50">
                         <h4 className="font-semibold mb-2 text-foreground flex items-center">
                           <Code className="w-4 h-4 mr-2 text-primary" />
@@ -238,14 +293,17 @@ const Experience = () => {
                         </p>
                         <div className="grid grid-cols-2 gap-2">
                           {exp.projectHighlight.features.map((feature, idx) => (
-                            <div key={idx} className="flex items-center space-x-2 text-sm text-muted-foreground">
+                            <div
+                              key={idx}
+                              className="flex items-center space-x-2 text-sm text-muted-foreground"
+                            >
                               <span className="w-1 h-1 bg-primary rounded-full" />
                               <span>{feature}</span>
                             </div>
                           ))}
                         </div>
                       </div>
-                    )}
+                    )} */}
                   </CardContent>
                 </Card>
               </motion.div>

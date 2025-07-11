@@ -26,14 +26,14 @@ const Main = () => {
       <section id="skills">
         <Skills />
       </section>
+      <section id="projects">
+        <Projects />
+      </section>
       <section id="experience">
         <Experience />
       </section>
       <section id="certificates">
         <Certificates />
-      </section>
-      <section id="projects">
-        <Projects />
       </section>
       <section id="contact">
         <Contact />

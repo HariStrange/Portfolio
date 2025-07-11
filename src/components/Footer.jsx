@@ -10,19 +10,19 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <Github className="w-5 h-5" />,
-      href: "https://github.com/natarajhari",
-      label: "GitHub"
+      href: "https://github.com/HariStrange",
+      label: "GitHub",
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
-      href: "https://linkedin.com/in/hariharan-natarajan",
-      label: "LinkedIn"
+      href: "https://www.linkedin.com/in/natarajhari/",
+      label: "LinkedIn",
     },
     {
       icon: <Mail className="w-5 h-5" />,
       href: "mailto:natarajhari1@gmail.com",
-      label: "Email"
-    }
+      label: "Email",
+    },
   ];
 
   const quickLinks = [
@@ -30,11 +30,11 @@ const Footer = () => {
     { href: "#about", label: "About" },
     { href: "#skills", label: "Skills" },
     { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" }
+    { href: "#contact", label: "Contact" },
   ];
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -48,30 +48,32 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-foreground">
-              Hariharan N
-            </h3>
+            <h3 className="text-2xl font-bold text-foreground">Hariharan N</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Full Stack Developer passionate about creating innovative web solutions 
-              and contributing to impactful projects. Currently working at Sholas Technologies.
+              Full Stack Developer passionate about creating innovative web
+              solutions and contributing to impactful projects. Currently
+              working at Sholas Technologies.
             </p>
             <div className="flex space-x-3">
-              {socialLinks.map((link, index) => (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-accent hover:bg-accent/80 transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  {link.icon}
-                </motion.a>
-              ))}
+              {socialLinks.map((link, index) => {
+                const isMail = link.href.startsWith("mailto:");
+                return (
+                  <motion.a
+                    key={link.label}
+                    href={link.href}
+                    target={"_blank"}
+                    rel={isMail ? undefined : "noopener noreferrer"}
+                    className="p-2 rounded-full bg-accent hover:bg-accent/80 transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    {link.icon}
+                  </motion.a>
+                );
+              })}
             </div>
           </motion.div>
 
@@ -115,11 +117,7 @@ const Footer = () => {
               <p className="text-sm text-muted-foreground mb-2">
                 Available for freelance opportunities
               </p>
-              <Button
-                variant="outline"
-                size="sm"
-                asChild
-              >
+              <Button variant="outline" size="sm" asChild>
                 <a href="#contact">Let's Work Together</a>
               </Button>
             </div>
@@ -137,8 +135,8 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             © {currentYear} Hariharan N. Made with{" "}
-            <Heart className="w-4 h-4 mx-1 text-red-500 fill-current" />{" "}
-            using React & Tailwind CSS
+            <Heart className="w-4 h-4 mx-1 text-red-500 fill-current" /> using
+            React & Tailwind CSS
           </motion.p>
 
           <motion.div

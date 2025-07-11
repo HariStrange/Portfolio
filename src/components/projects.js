@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, Zap, Building, Code, Star } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  Zap,
+  Building,
+  User,
+} from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
@@ -13,22 +19,31 @@ const projects = [
     category: "industry",
     type: "SaaS Platform",
     company: "Sholas Technologies",
-    description: "Enterprise AI-powered document intelligence platform with OCR and ML algorithms for structured data extraction.",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
-    technologies: ["Spring Boot", "React.js", "PostgreSQL", "AI/ML", "OCR", "Docker"],
+    description:
+      "Enterprise AI-powered document intelligence platform with OCR and ML algorithms for structured data extraction.",
+    image:
+      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
+    technologies: [
+      "Spring Boot",
+      "React.js",
+      "PostgreSQL",
+      "AI/ML",
+      "OCR",
+      "Docker",
+    ],
     keyFeatures: [
       "Advanced OCR processing",
       "AI-powered data extraction",
       "Real-time processing",
-      "Multi-tenant architecture"
+      "Multi-tenant architecture",
     ],
-    projectUrl: "#",
+    projectUrl: "https://papex.sholas.io/",
     githubUrl: "#",
     status: "Production",
-    team: "5 developers",
-    duration: "6 months",
+    team: "3 developers",
+    duration: "4 months",
     impact: "80% faster document processing",
-    priority: 1
+    priority: 1,
   },
   {
     id: 2,
@@ -36,14 +51,22 @@ const projects = [
     category: "industry",
     type: "Mobile Application",
     company: "Sholas Technologies",
-    description: "Comprehensive cab booking platform with real-time tracking and intelligent driver-rider matching.",
-    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&h=400&fit=crop",
-    technologies: ["React.js", "Spring Boot", "PostgreSQL", "Maps API", "WebSocket"],
+    description:
+      "Comprehensive cab booking platform with real-time tracking and intelligent driver-rider matching.",
+    image:
+      "https://www.appikr.com/blog/wp-content/uploads/2024/07/W-Blog-2-copy-1.jpg",
+    technologies: [
+      "React.js",
+      "Spring Boot",
+      "PostgreSQL",
+      "Maps API",
+      "WebSocket",
+    ],
     keyFeatures: [
       "Real-time ride booking",
       "GPS tracking & navigation",
       "Payment integration",
-      "Driver-rider matching"
+      "Driver-rider matching",
     ],
     projectUrl: "#",
     githubUrl: "#",
@@ -51,7 +74,7 @@ const projects = [
     team: "4 developers",
     duration: "4 months",
     impact: "1000+ users streamlined",
-    priority: 2
+    priority: 2,
   },
   {
     id: 3,
@@ -59,24 +82,26 @@ const projects = [
     category: "industry",
     type: "Corporate Website",
     company: "Sholas Technologies",
-    description: "Modern, responsive business website with enhanced UI/UX and optimized performance.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    description:
+      "Modern, responsive business website with enhanced UI/UX and optimized performance.",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
     technologies: ["React.js", "Bootstrap", "Framer Motion", "SEO"],
     keyFeatures: [
       "Responsive design",
       "Interactive animations",
       "SEO optimization",
-      "Performance optimization"
+      "Performance optimization",
     ],
-    projectUrl: "#",
+    projectUrl: "https://www.atom2.io/",
     githubUrl: "#",
     status: "Completed",
     team: "3 developers",
     duration: "2 months",
     impact: "60% increased engagement",
-    priority: 3
+    priority: 3,
   },
-  
+
   // Personal/Learning Projects
   {
     id: 4,
@@ -84,14 +109,16 @@ const projects = [
     category: "personal",
     type: "Learning Project",
     company: "NullClass Internship",
-    description: "Full-featured Q&A platform with user authentication, voting system, and real-time interactions.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
+    description:
+      "Full-featured Q&A platform with user authentication, voting system, and real-time interactions.",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
     technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
     keyFeatures: [
       "User authentication",
       "Question posting",
       "Voting system",
-      "Real-time notifications"
+      "Real-time notifications",
     ],
     projectUrl: "#",
     githubUrl: "#",
@@ -99,7 +126,7 @@ const projects = [
     team: "Solo project",
     duration: "1 month",
     impact: "95% internship completion",
-    priority: 4
+    priority: 4,
   },
   {
     id: 5,
@@ -107,22 +134,24 @@ const projects = [
     category: "personal",
     type: "Job Portal",
     company: "CCBP 4.0 Program",
-    description: "Job searching platform with advanced filtering, application tracking, and profile management.",
-    image: "https://assets.ccbp.in/frontend/react-js/logo-img.png",
+    description:
+      "Job searching platform with advanced filtering, application tracking, and profile management.",
+    image:
+      "https://media.istockphoto.com/id/1481370371/photo/portrait-of-enthusiastic-hispanic-young-woman-working-on-computer-in-a-modern-bright-office.jpg?s=612x612&w=0&k=20&c=8kNce9Ruc9F2KXvnwf0stWQXCwwQTBCrW8efrqhUIa4=",
     technologies: ["React.js", "Bootstrap", "Node.js", "SQLite", "JWT"],
     keyFeatures: [
       "Job search & filtering",
       "Application tracking",
       "Profile management",
-      "Company listings"
+      "Company listings",
     ],
     projectUrl: "https://jobbyapzp.ccbp.tech",
     githubUrl: "#",
     status: "Live",
     team: "Solo project",
-    duration: "3 months",
+    duration: "1 Week",
     impact: "Featured portfolio project",
-    priority: 5
+    priority: 5,
   },
   {
     id: 6,
@@ -130,22 +159,24 @@ const projects = [
     category: "personal",
     type: "Streaming Platform",
     company: "CCBP 4.0 Program",
-    description: "YouTube-like video streaming platform with authentication and responsive design.",
-    image: "https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png",
+    description:
+      "YouTube-like video streaming platform with authentication and responsive design.",
+    image:
+      "https://www.searchenginejournal.com/wp-content/uploads/2021/02/e9d716d3-bdbb-4449-adce-fbbd879f5b13-602c86b55629a.jpeg",
     technologies: ["React.js", "Bootstrap", "Node.js", "SQLite", "Video API"],
     keyFeatures: [
       "Video streaming",
       "User authentication",
       "Search functionality",
-      "Theme toggle"
+      "Theme toggle",
     ],
     projectUrl: "https://nxtytwatch.ccbp.tech",
     githubUrl: "#",
     status: "Live",
     team: "Solo project",
-    duration: "2 months",
+    duration: "2 Weeks",
     impact: "React.js expertise demo",
-    priority: 6
+    priority: 6,
   },
   {
     id: 7,
@@ -153,45 +184,54 @@ const projects = [
     category: "personal",
     type: "E-Library Platform",
     company: "Personal Project",
-    description: "E-commerce library application with Google Books API integration for book search and management.",
-    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop",
-    technologies: ["React.js", "Tailwind CSS", "Google Books API", "Responsive Design"],
+    description:
+      "E-commerce library application with Google Books API integration for book search and management.",
+    image:
+      "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop",
+    technologies: [
+      "React.js",
+      "Tailwind CSS",
+      "Google Books API",
+      "Responsive Design",
+    ],
     keyFeatures: [
       "Book search & discovery",
       "API integration",
       "Responsive design",
-      "User-friendly interface"
+      "User-friendly interface",
     ],
     projectUrl: "https://digillibrary.netlify.app/",
-    githubUrl: "#",
+    githubUrl: "https://github.com/HariStrange/Digital-Library",
     status: "Live",
     team: "Solo project",
-    duration: "1 month",
+    duration: "1 day",
     impact: "API integration showcase",
-    priority: 7
+    priority: 7,
   },
   {
     id: 8,
-    title: "Weather Dashboard",
+    title: "Doods Technologies",
     category: "personal",
-    type: "Web Application",
+    type: "Corparate Website",
     company: "Personal Project",
-    description: "Real-time weather application with location-based forecasts and interactive charts.",
-    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
-    technologies: ["React.js", "Weather API", "Chart.js", "Geolocation"],
+    description:
+      "Modern, responsive business website with enhanced UI/UX and optimized performance.",
+    image:
+      "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
+    technologies: ["React.js", "Tailwind css", "Framer motion", "data-aos"],
     keyFeatures: [
-      "Real-time weather data",
-      "Location-based forecasts",
-      "Interactive charts",
-      "Responsive design"
+      "Responsive design",
+      "Interactive animations",
+      "SEO optimization",
+      "Performance optimization",
     ],
-    projectUrl: "#",
-    githubUrl: "#",
-    status: "Completed",
+    projectUrl: "https://doodstech.netlify.app/",
+    githubUrl: "https://github.com/HariStrange/doodstech",
+    status: "Live",
     team: "Solo project",
-    duration: "2 weeks",
-    impact: "API integration mastery",
-    priority: 8
+    duration: "1 Day",
+    impact: "Responsiveness & Animation Showcase",
+    priority: 8,
   },
   {
     id: 9,
@@ -199,14 +239,22 @@ const projects = [
     category: "personal",
     type: "Productivity Tool",
     company: "Personal Project",
-    description: "Full-stack task management application with drag-and-drop functionality and team collaboration.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-    technologies: ["React.js", "Node.js", "MongoDB", "Socket.io", "Drag & Drop"],
+    description:
+      "Full-stack task management application with drag-and-drop functionality and team collaboration.",
+    image:
+      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+    technologies: [
+      "React.js",
+      "Node.js",
+      "PostgreSQL",
+      "Socket.io",
+      "Drag & Drop",
+    ],
     keyFeatures: [
       "Drag & drop interface",
       "Team collaboration",
       "Real-time updates",
-      "Task categorization"
+      "Task categorization",
     ],
     projectUrl: "#",
     githubUrl: "#",
@@ -214,22 +262,29 @@ const projects = [
     team: "Solo project",
     duration: "1 month",
     impact: "Full-stack proficiency",
-    priority: 9
-  }
+    priority: 9,
+  },
 ];
 
 const Projects = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("industry");
 
   const categories = [
-    { id: "all", label: "All Projects", icon: <Code className="w-4 h-4" /> },
-    { id: "industry", label: "Industry", icon: <Building className="w-4 h-4" /> },
-    { id: "personal", label: "Personal", icon: <Star className="w-4 h-4" /> }
+    // { id: "all", label: "All Projects", icon: <Code className="w-4 h-4" /> },
+    {
+      id: "industry",
+      label: "Industry",
+      icon: <Building className="w-4 h-4" />,
+    },
+    { id: "personal", label: "Personal", icon: <User className="w-4 h-4" /> },
   ];
 
-  const filteredProjects = activeCategory === "all" 
-    ? projects.sort((a, b) => a.priority - b.priority)
-    : projects.filter(project => project.category === activeCategory).sort((a, b) => a.priority - b.priority);
+  const filteredProjects =
+    activeCategory === "all"
+      ? projects.sort((a, b) => a.priority - b.priority)
+      : projects
+          .filter((project) => project.category === activeCategory)
+          .sort((a, b) => a.priority - b.priority);
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -259,7 +314,8 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Professional work and innovative solutions from industry projects to personal developments
+            Professional work and innovative solutions from industry projects to
+            personal developments
           </p>
         </motion.div>
 
@@ -302,7 +358,7 @@ const Projects = () => {
                 whileHover={{ y: -8 }}
                 className="group cursor-pointer"
               >
-                <Card className="h-full overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-2xl transition-all duration-500">
+                <Card className="h-full overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-2xl transition-all duration-500 shadow-lg">
                   {/* Project Image */}
                   <div className="relative h-48 overflow-hidden">
                     <img
@@ -311,17 +367,13 @@ const Projects = () => {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    
-                    {/* Status & Priority */}
+
                     <div className="absolute top-4 left-4 flex flex-col space-y-2">
-                      <Badge className={`border ${getStatusColor(project.status)}`}>
+                      <Badge
+                        className={`border ${getStatusColor(project.status)}`}
+                      >
                         {project.status}
                       </Badge>
-                      {project.category === "industry" && (
-                        <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">
-                          {project.priority}
-                        </div>
-                      )}
                     </div>
 
                     <div className="absolute bottom-4 left-4">
@@ -348,7 +400,11 @@ const Projects = () => {
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-1">
                       {project.technologies.slice(0, 3).map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-xs px-2 py-1">
+                        <Badge
+                          key={tech}
+                          variant="secondary"
+                          className="text-xs px-2 py-1"
+                        >
                           {tech}
                         </Badge>
                       ))}
@@ -365,7 +421,9 @@ const Projects = () => {
                         <Zap className="w-4 h-4 text-primary" />
                         <span className="text-sm font-medium">Impact:</span>
                       </div>
-                      <p className="text-xs text-muted-foreground mt-1">{project.impact}</p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        {project.impact}
+                      </p>
                     </div>
 
                     {/* Action Buttons */}
@@ -376,7 +434,7 @@ const Projects = () => {
                         className="flex-1"
                         onClick={(e) => {
                           e.stopPropagation();
-                          window.open(project.projectUrl, '_blank');
+                          window.open(project.projectUrl, "_blank");
                         }}
                       >
                         <ExternalLink className="w-4 h-4 mr-1" />
@@ -387,7 +445,7 @@ const Projects = () => {
                         size="sm"
                         onClick={(e) => {
                           e.stopPropagation();
-                          window.open(project.githubUrl, '_blank');
+                          window.open(project.githubUrl, "_blank");
                         }}
                       >
                         <Github className="w-4 h-4" />

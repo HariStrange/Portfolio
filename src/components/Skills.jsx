@@ -8,44 +8,124 @@ const skillCategories = [
   {
     title: "Languages",
     skills: [
-      { name: "Java", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/4373217_java_logo_logos_icon_o6ll8s.png", level: 90 },
-      { name: "Python", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526106/html5-logo-31813_udxo3g.png", level: 80 },
-      { name: "JavaScript", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526317/icons8-javascript-480_afdeqc.png", level: 85 }
-    ]
+      {
+        name: "Java",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/4373217_java_logo_logos_icon_o6ll8s.png",
+        level: 90,
+      },
+      {
+        name: "Python",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1752227978/python_bacqz7.png",
+        level: 50,
+      },
+      {
+        name: "JavaScript",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526317/icons8-javascript-480_afdeqc.png",
+        level: 85,
+      },
+    ],
   },
   {
     title: "Frontend",
     skills: [
-      { name: "React.js", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526106/1174949_js_react_js_logo_react_react_native_icon_zwdzxb.png", level: 90 },
-      { name: "Tailwind CSS", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526157/icons8-tailwindcss-480_gix3ml.png", level: 85 },
-      { name: "Bootstrap", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526318/icons8-bootstrap-240_gutyn5.png", level: 80 },
-      { name: "Framer Motion", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526701/icons8-css-logo-480_xeqbwy.png", level: 75 }
-    ]
+      {
+        name: "React.js",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526106/1174949_js_react_js_logo_react_react_native_icon_zwdzxb.png",
+        level: 90,
+      },
+      {
+        name: "Tailwind CSS",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526157/icons8-tailwindcss-480_gix3ml.png",
+        level: 85,
+      },
+      {
+        name: "Bootstrap",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526318/icons8-bootstrap-240_gutyn5.png",
+        level: 80,
+      },
+      {
+        name: "Framer Motion",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1752227978/picture_o1fkdb.png",
+        level: 75,
+      },
+    ],
   },
   {
     title: "Backend",
     skills: [
-      { name: "Spring Boot", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526317/icons8-spring-boot-480_vucs9a.png", level: 90 },
-      { name: "Node.js", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/1012818_code_development_logo_nodejs_icon_bfggzj.png", level: 80 },
-      { name: "Express.js", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/1012818_code_development_logo_nodejs_icon_bfggzj.png", level: 75 }
-    ]
+      {
+        name: "Spring Boot",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526317/icons8-spring-boot-480_vucs9a.png",
+        level: 90,
+      },
+      {
+        name: "Node.js",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/1012818_code_development_logo_nodejs_icon_bfggzj.png",
+        level: 80,
+      },
+      {
+        name: "Express.js",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1752227974/icons8-express-js-50_wdrho2.png",
+        level: 75,
+      },
+    ],
   },
   {
     title: "Databases",
     skills: [
-      { name: "PostgreSQL", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526317/icons8-postgresql-480_gp84jf.png", level: 85 },
-      { name: "MySQL", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526317/icons8-postgresql-480_gp84jf.png", level: 80 },
-      { name: "SQLite", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526643/SQLite_rlulf4.png", level: 75 }
-    ]
+      {
+        name: "PostgreSQL",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526317/icons8-postgresql-480_gp84jf.png",
+        level: 85,
+      },
+      {
+        name: "MySQL",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1752227974/mysql_sl5xeh.png",
+        level: 80,
+      },
+      {
+        name: "SQLite",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526643/SQLite_rlulf4.png",
+        level: 75,
+      },
+    ],
   },
   {
     title: "Tools & DevOps",
     skills: [
-      { name: "Git", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png", level: 90 },
-      { name: "Docker", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png", level: 70 },
-      { name: "Nginx", image: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png", level: 65 }
-    ]
-  }
+      {
+        name: "Git",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png",
+        level: 90,
+      },
+      {
+        name: "Docker",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1752227974/social_tgg0cx.png",
+        level: 40,
+      },
+      {
+        name: "Nginx",
+        image:
+          "https://res.cloudinary.com/dx5lg8mei/image/upload/v1752227974/nginx_rjvd42.png",
+        level: 60,
+      },
+    ],
+  },
 ];
 
 const Skills = () => {
@@ -68,7 +148,8 @@ const Skills = () => {
             Technical Skills
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Expertise across the full technology stack with hands-on experience in modern frameworks and tools
+            Expertise across the full technology stack with hands-on experience
+            in modern frameworks and tools
           </p>
         </motion.div>
 
@@ -106,18 +187,20 @@ const Skills = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="group hover:shadow-lg transition-all duration-300 bg-card/50 backdrop-blur-sm border-border/50">
+              <Card className="group hover:shadow-lg transition-all duration-300 bg-card/50 backdrop-blur-sm border-border/50 shadow-md">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-accent/50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="w-20 h-20 rounded-lg bg-accent/50 flex items-center justify-center group-hover:scale-110 transition-transform">
                       <img
                         src={skill.image}
                         alt={skill.name}
-                        className="w-8 h-8 object-contain"
+                        className="w-14 h-14 object-contain"
                       />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-semibold text-foreground">{skill.name}</h3>
+                      <h3 className="font-semibold text-foreground">
+                        {skill.name}
+                      </h3>
                       <div className="w-full bg-accent/30 rounded-full h-2 mt-2">
                         <motion.div
                           className="bg-primary h-2 rounded-full"
